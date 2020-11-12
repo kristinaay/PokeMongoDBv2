@@ -1,3 +1,29 @@
 ul {
   columns: 8;
 }
+
+.myButton2 {
+  background: linear-gradient(to bottom, #007dc1 5%, #6e9fc2 100%);
+  background-color: #007dc1;
+  border-radius: 8px;
+  border: 1px solid #124d77;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  padding: 9px 16px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #154682;
+  margin: 1px;
+  justify-self: flex-start;
+  margin-right: auto;
+}
+.myButton2:hover {
+  background: linear-gradient(to bottom, #6e9fc2 5%, #007dc1 100%);
+  background-color: #6e9fc2;
+}
+.myButton2:active {
+  position: relative;
+  top: 1px;
+}

@@ -145,17 +145,17 @@ function Player(props) {
           PokeMongoDB
         </a>
         <Link to="/player">
-          <button className="myButton" type="button">
+          <button className="myButton2" type="button">
             Team Page
           </button>
         </Link>
         <Link to="/pokemon">
-          <button className="myButton" type="button">
+          <button className="myButton2" type="button">
             Pokemon List
           </button>
         </Link>
         <Link to="/favorites">
-          <button className="myButton" type="button">
+          <button className="myButton2" type="button">
             Favorites
           </button>
         </Link>
