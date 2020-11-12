@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import "./styles/Player.css";
+import { Link } from "react-router-dom";
 
 function Player(props) {
   const renderTeams = () => {
@@ -16,36 +17,38 @@ function Player(props) {
     let poke5 = teams[0].team[5];
     return (
       <div>
-        <li key={poke}>
-          <img src={`./images/${poke}.png`} alt={`(#${poke}) Sprite`} />
-          <br />
-          <br />
-        </li>
-        <li key={poke1}>
-          <img src={`./images/${poke1}.png`} alt={`(#${poke1}) Sprite`} />
-          <br />
-          <br />
-        </li>
-        <li key={poke2}>
-          <img src={`./images/${poke2}.png`} alt={`(#${poke2}) Sprite`} />
-          <br />
-          <br />
-        </li>
-        <li key={poke3}>
-          <img src={`./images/${poke3}.png`} alt={`(#${poke3}) Sprite`} />
-          <br />
-          <br />
-        </li>
-        <li key={poke4}>
-          <img src={`./images/${poke4}.png`} alt={`(#${poke4}) Sprite`} />
-          <br />
-          <br />
-        </li>
-        <li key={poke5}>
-          <img src={`./images/${poke5}.png`} alt={`(#${poke5}) Sprite`} />
-          <br />
-          <br />
-        </li>
+        <div>
+          <li key={poke}>
+            <img src={`./images/${poke}.png`} alt={`(#${poke}) Sprite`} />
+            <br />
+            <br />
+          </li>
+          <li key={poke1}>
+            <img src={`./images/${poke1}.png`} alt={`(#${poke1}) Sprite`} />
+            <br />
+            <br />
+          </li>
+          <li key={poke2}>
+            <img src={`./images/${poke2}.png`} alt={`(#${poke2}) Sprite`} />
+            <br />
+            <br />
+          </li>
+          <li key={poke3}>
+            <img src={`./images/${poke3}.png`} alt={`(#${poke3}) Sprite`} />
+            <br />
+            <br />
+          </li>
+          <li key={poke4}>
+            <img src={`./images/${poke4}.png`} alt={`(#${poke4}) Sprite`} />
+            <br />
+            <br />
+          </li>
+          <li key={poke5}>
+            <img src={`./images/${poke5}.png`} alt={`(#${poke5}) Sprite`} />
+            <br />
+            <br />
+          </li>
+        </div>
       </div>
     );
   };
@@ -120,6 +123,42 @@ function Player(props) {
 
   return (
     <div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" href="/">
+          <img
+            src="./images/pika.png"
+            alt="Pikachu"
+            title="Pikachu"
+            width="60"
+          />
+          PokeMongoDB
+        </a>
+        <Link to="/player">
+          <button className="myButton" type="button">
+            Team Page
+          </button>
+        </Link>
+        <Link to="/pokemon">
+          <button className="myButton" type="button">
+            Pokemon List
+          </button>
+        </Link>
+        <Link to="/favorites">
+          <button className="myButton" type="button">
+            Favorites
+          </button>
+        </Link>
+        <Link to="/signin">
+          <button className="myButton" type="button">
+            Sign In
+          </button>
+        </Link>
+        <Link to="/signup">
+          <button className="myButton" type="button">
+            Sign Up
+          </button>
+        </Link>
+      </nav>
       <br />
       <ol>{renderTeams()}</ol>
       <br />

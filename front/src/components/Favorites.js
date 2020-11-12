@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function Favorites(props) {
   const renderFavorites = () => {
@@ -63,6 +64,42 @@ function Favorites(props) {
 
   return (
     <div>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" href="/">
+          <img
+            src="./images/pika.png"
+            alt="Pikachu"
+            title="Pikachu"
+            width="60"
+          />
+          PokeMongoDB
+        </a>
+        <Link to="/player">
+          <button className="myButton" type="button">
+            Team Page
+          </button>
+        </Link>
+        <Link to="/pokemon">
+          <button className="myButton" type="button">
+            Pokemon List
+          </button>
+        </Link>
+        <Link to="/favorites">
+          <button className="myButton" type="button">
+            Favorites
+          </button>
+        </Link>
+        <Link to="/signin">
+          <button className="myButton" type="button">
+            Sign In
+          </button>
+        </Link>
+        <Link to="/signup">
+          <button className="myButton" type="button">
+            Sign Up
+          </button>
+        </Link>
+      </nav>
       <ol>{renderFavorites()}</ol>
     </div>
   );

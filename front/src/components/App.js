@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./styles/App.css";
-
+import { Link } from "react-router-dom";
 import Pokemon from "./Pokemon.js";
 import Player from "./Player.js";
 import User from "./User.js";
 import Favorites from "./Favorites.js";
+import SignUp from "./SignUp.js";
+import SignIn from "./SignIn.js";
+import Home from "./Home.js";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
@@ -15,6 +19,15 @@ function App() {
   const [showUserEnter, setShowUserEnter] = useState(true);
   const [favorites, setFavorites] = useState([]);
   const [showFavorites, setShowFavorites] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem("username");
+    if (storedUser) {
+      setUser(storedUser);
+    }
+  }, []);
 
   useEffect(() => {
     const getPokemon = async () => {
@@ -54,121 +67,45 @@ function App() {
     getFavorites();
   }, []); // Only run the first time; fetches user's team
 
-  useEffect(() => {
-    const storedUser = sessionStorage.getItem("username");
-    if (storedUser) {
-      setUser(storedUser);
-    }
-  }, []); // Only run the first time; gets username
-
-  function handleChange(username) {
-    console.log(username);
-    setUser(username);
-    console.log("app: user changed");
-    setShowTeam(true);
-    setShowPokemon(false);
-    setShowUserEnter(false);
-  }
-
+  // Only run the first time; gets username
   return (
-    <div className="App">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="/">
-          <img
-            src="./images/pika.png"
-            alt="Pikachu"
-            title="Pikachu"
-            width="60"
-          />
-          PokeMongoDB
-        </a>
-        <a
-          className="nav-item active nav-link"
-          href="teamEdit"
-          onClick={(evt) => {
-            evt.preventDefault();
-            setShowTeam(true);
-            setShowPokemon(false);
-            setShowUserEnter(false);
-            setShowFavorites(false);
-          }}
-        >
-          Team Page<span className="sr-only">(current)</span>
-        </a>
-        <a
-          className="nav-item active nav-link"
-          href="pokeList"
-          onClick={(evt) => {
-            evt.preventDefault();
-            setShowPokemon(true);
-            setShowTeam(false);
-            setShowUserEnter(false);
-            setShowFavorites(false);
-          }}
-        >
-          Pokemon List<span className="sr-only">(current)</span>
-        </a>
-        <a
-          className="nav-item active mavbar-nav nav-link navbar-right"
-          href="favoriteMon"
-          onClick={(evt) => {
-            evt.preventDefault();
-            setShowTeam(false);
-            setShowPokemon(false);
-            setShowUserEnter(false);
-            setShowFavorites(true);
-          }}
-        >
-          Favorites
-          <span className="sr-only">(current)</span>
-        </a>
-        <a
-          className="nav-item active mavbar-nav nav-link navbar-right"
-          href="userlogin"
-          onClick={(evt) => {
-            evt.preventDefault();
-            setShowTeam(false);
-            setShowPokemon(false);
-            setShowUserEnter(true);
-            setShowFavorites(false);
-          }}
-        >
-          Change User: {user}
-          <span className="sr-only">(current)</span>
-        </a>
-      </nav>
-      <div class="container text-left">
-        <h1>Build Your Best Team!</h1>
-        {showUserEnter ? (
-          <User handleChange={handleChange} player={player}></User>
-        ) : (
-          ""
-        )}
-        {showFavorites ? (
-          <Favorites favorites={favorites} user={user}></Favorites>
-        ) : (
-          ""
-        )}
-        {showPokemon ? (
-          <Pokemon player={player} pokemon={pokemon} user={user}></Pokemon>
-        ) : (
-          ""
-        )}
-        {showTeam ? (
-          <Player player={player} pokemon={pokemon} user={user}></Player>
-        ) : (
-          ""
-        )}
-        <br />
-        <footer>
-          Created by Alex Moeller and Ely Lam 2020{" "}
-          <img
-            src="./images/pokeball.png"
-            alt="Pokeball"
-            title="Pokeball"
-            width="20"
-          />
-        </footer>
+    <div>
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/signin" component={SignIn} />
+            <Route
+              path="/favorites"
+              render={(props) => (
+                <Favorites {...props} favorites={favorites} user={user} />
+              )}
+            />
+            <Route
+              path="/player"
+              render={(props) => (
+                <Player
+                  {...props}
+                  player={player}
+                  pokemon={pokemon}
+                  user={user}
+                />
+              )}
+            />
+            <Route
+              path="/pokemon"
+              render={(props) => (
+                <Pokemon
+                  {...props}
+                  player={player}
+                  pokemon={pokemon}
+                  user={user}
+                />
+              )}
+            />
+          </Switch>
+        </Router>
       </div>
     </div>
   );

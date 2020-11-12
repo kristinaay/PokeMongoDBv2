@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./styles/Pokemon.css";
+import { Link } from "react-router-dom";
 
 function Pokemon(props) {
   const [search, setPokemon] = useState("");
@@ -9,7 +10,7 @@ function Pokemon(props) {
     return props.pokemon
       .filter(
         (p) =>
-          p.Pokemon && p.Pokemon.toLowerCase().startsWith(search.toLowerCase())
+          p.Pokemon && p.pokemon.toLowerCase().startsWith(search.toLowerCase())
       )
       .map((p) => (
         <li key={p._id}>
@@ -79,16 +80,54 @@ function Pokemon(props) {
 
   return (
     <div>
-      <label htmlFor="search">
-        Search for a pokemon to add to your team:{" "}
-        <input
-          type="text"
-          value={search}
-          onChange={(evt) => setPokemon(evt.target.value)}
-        />
-      </label>
-      <br />
-      <ol>{renderPokemon()}</ol>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" href="/">
+          <img
+            src="./images/pika.png"
+            alt="Pikachu"
+            title="Pikachu"
+            width="60"
+          />
+          PokeMongoDB
+        </a>
+        <Link to="/player">
+          <button className="myButton" type="button">
+            Team Page
+          </button>
+        </Link>
+        <Link to="/pokemon">
+          <button className="myButton" type="button">
+            Pokemon List
+          </button>
+        </Link>
+        <Link to="/favorites">
+          <button className="myButton" type="button">
+            Favorites
+          </button>
+        </Link>
+        <Link to="/signin">
+          <button className="myButton" className="myButton" type="button">
+            Sign In
+          </button>
+        </Link>
+        <Link to="/signup">
+          <button className="myButton" type="button">
+            Sign Up
+          </button>
+        </Link>
+      </nav>
+      <div>
+        <label htmlFor="search">
+          Search for a pokemon to add to your team:{" "}
+          <input
+            type="text"
+            value={search}
+            onChange={(evt) => setPokemon(evt.target.value)}
+          />
+        </label>
+        <br />
+        <ol>{renderPokemon()}</ol>
+      </div>
     </div>
   );
 }
