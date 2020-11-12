@@ -18,7 +18,7 @@ function Home() {
   return (
     <div>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-end">
           <a className="navbar-brand" href="/">
             <img
               src="./images/pika.png"
@@ -28,31 +28,18 @@ function Home() {
             />
             PokeMongoDB
           </a>
-          <Link to="/player">
-            <button className="myButton" type="button">
-              Team Page
-            </button>
-          </Link>
-          <Link to="/pokemon">
-            <button className="myButton" type="button">
-              Pokemon List
-            </button>
-          </Link>
-          <Link to="/favorites">
-            <button className="myButton" type="button">
-              Favorites
-            </button>
-          </Link>
-          <Link to="/signin">
-            <button className="myButton" type="button">
-              Sign In
-            </button>
-          </Link>
-          <Link to="/signup">
-            <button className="myButton" type="button">
-              Sign Up
-            </button>
-          </Link>
+          <div className="homebuttons">
+            <Link to="/signin">
+              <button className="myButton" type="button">
+                Sign In
+              </button>
+            </Link>
+            <Link to="/signup">
+              <button className="myButton" type="button">
+                Sign Up
+              </button>
+            </Link>
+          </div>
         </nav>
         <p>
           Welcome to PokeMongoDB! To get started create an account and then sign

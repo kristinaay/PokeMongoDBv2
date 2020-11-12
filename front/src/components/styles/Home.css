@@ -4,6 +4,12 @@ p {
 
 .navbar-brand {
   font-family: "Goldman", cursive;
+  justify-self: flex-start;
+  margin-right: auto;
+}
+
+.navbar {
+  width: 100%;
 }
 
 .myButton {
