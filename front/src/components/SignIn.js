@@ -19,21 +19,6 @@ function SignIn() {
           />
           PokeMongoDB
         </a>
-        <Link to="/player">
-          <button className="myButton" type="button">
-            Team Page
-          </button>
-        </Link>
-        <Link to="/pokemon">
-          <button className="myButton" type="button">
-            Pokemon List
-          </button>
-        </Link>
-        <Link to="/favorites">
-          <button className="myButton" type="button">
-            Favorites
-          </button>
-        </Link>
         <Link to="/signin">
           <button className="myButton" type="button">
             Sign In

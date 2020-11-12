@@ -75,7 +75,7 @@ router.post(
     failureRedirect: "/signin?error=Invalid username or password.",
   }),
   function (req, res) {
-    res.redirect("/?username=" + req.user.username);
+    res.redirect("/player?username=" + req.user.username);
   }
 );
 //);

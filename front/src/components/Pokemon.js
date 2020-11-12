@@ -105,16 +105,6 @@ function Pokemon(props) {
             Favorites
           </button>
         </Link>
-        <Link to="/signin">
-          <button className="myButton" className="myButton" type="button">
-            Sign In
-          </button>
-        </Link>
-        <Link to="/signup">
-          <button className="myButton" type="button">
-            Sign Up
-          </button>
-        </Link>
       </nav>
       <div>
         <label htmlFor="search">

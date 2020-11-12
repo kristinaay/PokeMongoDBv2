@@ -1,20 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+
 import "./styles/Home.css";
 
 function Home() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const username = urlParams.get("username");
-  sessionStorage.setItem("username", username);
-  const [user, setUser] = useState("");
-  useEffect(() => {
-    const storedUser = sessionStorage.getItem("username");
-    if (storedUser) {
-      setUser(storedUser);
-    }
-  }, []);
-
   return (
     <div>
       <div>

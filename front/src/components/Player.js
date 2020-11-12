@@ -1,8 +1,19 @@
 import PropTypes from "prop-types";
 import "./styles/Player.css";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function Player(props) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const username = urlParams.get("username");
+  sessionStorage.setItem("username", username);
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    const storedUser = sessionStorage.getItem("username");
+    if (storedUser) {
+      setUser(storedUser);
+    }
+  }, []);
   const renderTeams = () => {
     const teams = props.player.filter((t) =>
       t.name.toLowerCase().startsWith(props.user)
@@ -146,16 +157,6 @@ function Player(props) {
         <Link to="/favorites">
           <button className="myButton" type="button">
             Favorites
-          </button>
-        </Link>
-        <Link to="/signin">
-          <button className="myButton" type="button">
-            Sign In
-          </button>
-        </Link>
-        <Link to="/signup">
-          <button className="myButton" type="button">
-            Sign Up
           </button>
         </Link>
       </nav>
