@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 
 function Favorites(props) {
   const renderFavorites = () => {
-    console.log(props.favorites);
+    const poke = props.favorites;
+    let count = Object.keys(poke).length;
+    if (count === 0) {
+      return null;
+    }
     const favPlayer = props.favorites.filter((t) =>
       t._id.toLowerCase().startsWith(props.user)
     );
