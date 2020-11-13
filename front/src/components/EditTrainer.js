@@ -38,6 +38,19 @@ function EditTrainer() {
             Favorites
           </button>
         </Link>
+        <Link to="/trainer">
+          <button className="myButton2" type="button">
+            Trainer Page
+          </button>
+        </Link>
+        <form className="form" action="/signout" method="post">
+          <input
+            className="myButton3"
+            type="submit"
+            name="signout"
+            value="Sign Out"
+          />
+        </form>
       </nav>
       <div className="TrainerCard">
         <div className="container-fluid d-flex justify-content-center">

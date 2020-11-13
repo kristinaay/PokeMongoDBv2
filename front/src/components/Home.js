@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./styles/Home.css";
 
 function Home() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const msg = urlParams.get("msg");
   return (
     <div>
       <div>
@@ -29,6 +31,8 @@ function Home() {
             </Link>
           </div>
         </nav>
+        <div className="msg"> {msg ? `${msg}` : ""}</div>
+        <br />
         <p>
           Welcome to PokeMongoDB! To get started create an account and then sign
           in. Once you've signed in, check out your team by clicking Team Page

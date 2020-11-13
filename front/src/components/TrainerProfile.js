@@ -15,7 +15,7 @@ function TrainerProfile(props) {
 
   let trainer = [0, 0, 0, 0, 0];
   console.log("props: ");
-  console.log(props.player);
+  console.log(props.trainer);
   if (props.trainer !== undefined) {
     console.log(props.trainer);
     trainer = props.trainer.filter((t) =>
@@ -58,6 +58,19 @@ function TrainerProfile(props) {
             Favorites
           </button>
         </Link>
+        <Link to="/trainer">
+          <button className="myButton2" type="button">
+            Trainer Page
+          </button>
+        </Link>
+        <form className="form" action="/signout" method="post">
+          <input
+            className="myButton3"
+            type="submit"
+            name="signout"
+            value="Sign Out"
+          />
+        </form>
       </nav>
       <div className="TrainerCard">
         <div className="container-fluid d-flex justify-content-center">
