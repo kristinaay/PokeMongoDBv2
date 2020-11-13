@@ -16,20 +16,21 @@ function TrainerProfile(props) {
   let trainer = [0, 0, 0, 0, 0];
   console.log("props: ");
   console.log(props.trainer);
-  if (props.trainer !== undefined) {
-    console.log(props.trainer);
-    trainer = props.trainer.filter((t) =>
+  const train = props.trainer;
+    let count = Object.keys(train).length;
+    if (count === 0) {
+      return null;
+    }
+  trainer = props.trainer.filter((t) =>
       t.name.toLowerCase().startsWith(user)
     );
-    console.log(trainer);
-  }
 
   console.log(trainer);
 
   let age = trainer[0].age;
   let gender = trainer[0].gender;
   let region = trainer[0].region;
-  let icon = trainer[0];
+  let icon = trainer;
 
   return (
     <div>
