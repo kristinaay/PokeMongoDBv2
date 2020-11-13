@@ -98,7 +98,6 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={SignUp} />
             <Route path="/signin" component={SignIn} />
-            <Route path="/trainer" component={TrainerProfile} />
             <Route
               path="/favorites"
               render={(props) => (
