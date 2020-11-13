@@ -37,6 +37,23 @@ function MyDB() {
         return players.find({}).toArray(); // return the players file
     };
 
+    myDB.initializeTrainers = async () => {
+        const client = new MongoClient(uri, { useUnifiedTopology: true });
+        await client.connect();
+
+        const db = client.db("pokedb");
+        const trainers = db.collection("trainers");
+        return trainers;
+    };
+
+    myDB.getTrainers = async () => {
+        const client = new MongoClient(uri, { useUnifiedTopology: true });
+        await client.connect();
+        const db = client.db("pokedb"); // access pokemon db
+        const trainers = db.collection("trainers"); // access trainers collection
+        return trainers.find({}).toArray(); // return the trainers profile
+    };
+
     myDB.setPokemon = async (player, team, dex, newPokemon) => {
         const tempString = team + "." + dex;
         const client = new MongoClient(uri, { useUnifiedTopology: true });

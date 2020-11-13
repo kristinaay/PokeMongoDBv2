@@ -8,12 +8,14 @@ import Favorites from "./Favorites.js";
 import SignUp from "./SignUp.js";
 import SignIn from "./SignIn.js";
 import Home from "./Home.js";
+import TrainerProfile from "./TrainerProfile.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
   const [showPokemon, setShowPokemon] = useState(false);
   const [player, setPlayer] = useState([]);
+  const [trainer, setTrainer] = useState([]);
   const [showTeam, setShowTeam] = useState(false);
   const [user, setUser] = useState("");
   const [showUserEnter, setShowUserEnter] = useState(true);
@@ -30,6 +32,19 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const getPlayer = async () => {
+      console.log("getting player");
+      try {
+        const _player = await fetch("/player").then((res) => res.json());
+        setPlayer(_player);
+      } catch (err) {
+        console.log("error ", err);
+      }
+    };
+    getPlayer();
+  }, []); // Only run the first time; fetches user's team
+
+  useEffect(() => {
     const getPokemon = async () => {
       try {
         const _pokemon = await fetch("/pokemon").then((res) => res.json());
@@ -42,16 +57,16 @@ function App() {
   }, []); // Only run the first time; fetches list of pokemon
 
   useEffect(() => {
-    const getPlayer = async () => {
-      console.log("getting player");
+    const getTrainers = async () => {
+      console.log("getting trainer profile info");
       try {
-        const _player = await fetch("/player").then((res) => res.json());
-        setPlayer(_player);
+        const _trainer = await fetch("/trainers").then((res) => res.json());
+        setTrainer(_trainer);
       } catch (err) {
         console.log("error ", err);
       }
     };
-    getPlayer();
+    getTrainers();
   }, []); // Only run the first time; fetches user's team
 
   useEffect(() => {
@@ -76,6 +91,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={SignUp} />
             <Route path="/signin" component={SignIn} />
+            <Route path="/trainer" component={TrainerProfile} />
             <Route
               path="/favorites"
               render={(props) => (
@@ -100,6 +116,18 @@ function App() {
                   {...props}
                   player={player}
                   pokemon={pokemon}
+                  user={user}
+                />
+              )}
+            />
+
+            <Route
+              path="/trainer"
+              render={(props) => (
+                <TrainerProfile
+                  {...props}
+                  trainer={trainer}
+                  player={player}
                   user={user}
                 />
               )}

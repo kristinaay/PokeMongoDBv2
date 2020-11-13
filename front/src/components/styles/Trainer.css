@@ -1,0 +1,52 @@
+.cardname {
+  font-family: "Goldman", cursive;
+}
+
+tml,
+body {
+  margin: 0px;
+}
+.TrainerCard {
+  justify-content: center;
+}
+
+.trainer {
+  height: 475px;
+  width: 600px;
+  margin-top: auto;
+  margin-bottom: auto;
+  justify-content: center;
+  align-content: center;
+}
+.card-header {
+  color: #3c240f;
+}
+
+.card-body {
+  color: #3c240f;
+}
+
+.container-fluid {
+  height: 100vh;
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card-footer-trainer {
+  display: inline-flex;
+  width: 600px;
+  font-size: 20px;
+  font-family: "Goldman", cursive;
+}
+
+.badges {
+  align-self: flex-start;
+  margin-right: 100px;
+}
+/**for mobile version make card thinner**/
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 250px;
+  }
+}

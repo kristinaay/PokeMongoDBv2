@@ -126,6 +126,11 @@ router.get("/player", async (req, res) => {
   res.json(player); // get player db
 });
 
+router.get("/trainers", async (req, res) => {
+  const trainer = await myDB.getTrainers();
+  res.json(trainer); // get trainer db
+});
+
 router.get("/pokemon", async (req, res) => {
   const pokemon = await myDB.getPokemon();
   res.json(pokemon); // get pokemon db
