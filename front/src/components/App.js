@@ -116,7 +116,7 @@ function App() {
             <Route
               path="/favorites"
               render={(props) => (
-                <Favorites {...props} favorites={favorites} user={user} />
+                <Favorites {...props} favorites={favorites} user={user} player={player} pokemon={pokemon}/>
               )}
             />
             <Route
