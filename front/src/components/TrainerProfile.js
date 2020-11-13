@@ -21,7 +21,7 @@ function TrainerProfile(props) {
   if (count === 0) {
     return null;
   }
-  trainer = props.trainer.filter((t) => t.name.toLowerCase().startsWith(user));
+  trainer = props.trainer.filter((t) => t.name.startsWith(user));
 
   console.log(trainer);
 

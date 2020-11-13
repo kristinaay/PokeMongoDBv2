@@ -10,7 +10,7 @@ function Favorites(props) {
       return null;
     }
     const favPlayer = props.favorites.filter((t) =>
-      t._id.toLowerCase().startsWith(props.user)
+      t._id.startsWith(props.user)
     );
     console.log(favPlayer);
     const favArray = favPlayer[0].favMon;

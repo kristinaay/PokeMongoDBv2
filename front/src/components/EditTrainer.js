@@ -52,11 +52,11 @@ function EditTrainer() {
           />
         </form>
       </nav>
-      <div className="TrainerCard">
+      <div className="EditCard">
         <div className="container-fluid d-flex justify-content-center">
-          <div className="trainer">
+          <div className="edit">
             <div className="card-header">
-              <h3 className="cardname">Edit Your Trainer Information</h3>
+              <h3 className="editcardname">Edit Your Trainer Information</h3>
             </div>
             <form action="/edittrainerinfo" method="POST">
               <div className="card-body">

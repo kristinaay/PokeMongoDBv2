@@ -7,7 +7,6 @@ function Player(props) {
   const urlParams = new URLSearchParams(window.location.search);
   const username = urlParams.get("username");
   if (username !== null && username !== undefined) {
-    sessionStorage.setItem("username", username);
     localStorage.setItem("username", username);
   }
   const [user, setUser] = useState("");
@@ -18,9 +17,8 @@ function Player(props) {
     }
   }, []);
   const renderTeams = () => {
-    const teams = props.player.filter((t) =>
-      t.name.toLowerCase().startsWith(props.user)
-    );
+    const teams = props.player.filter((t) => t.name.startsWith(props.user));
+    console.log("teams");
     console.log(teams);
     if (teams.length === 0) return null;
     let poke = teams[0].team[0];

@@ -124,6 +124,9 @@ router.post("/signupp", async (req, res, next) => {
 router.post("/update", async (req, res, next) => {
   const users = await myDB.initializeUsers();
   const info = req.body;
+  const user = req.body.username;
+  await myDB.createTeam(user);
+  await myDB.createFavorites(user);
 
   if (!req.isAuthenticated()) {
     res.redirect("/signin");

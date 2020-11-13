@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/Home.css";
+import { useState, useEffect } from "react";
 
 function Home() {
+  const [user, setUser] = useState("");
   const urlParams = new URLSearchParams(window.location.search);
   const msg = urlParams.get("msg");
+  const username = urlParams.get("username");
+  localStorage.setItem("username", username);
+  console.log("username");
+  console.log(localStorage.getItem("username"));
+
   return (
     <div>
       <div>

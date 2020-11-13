@@ -44,7 +44,7 @@ function SignIn() {
                     type="text"
                     id="username"
                     className="form-control"
-                    placeholder="Alice"
+                    placeholder="Misty"
                     name="username"
                   />
                 </div>
@@ -54,7 +54,7 @@ function SignIn() {
                     type="password"
                     id="password"
                     className="form-control"
-                    placeholder="123abc"
+                    placeholder="pikapika123"
                     name="password"
                   />
                 </div>
