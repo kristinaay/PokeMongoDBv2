@@ -36,7 +36,7 @@ function Favorites(props) {
         <br />
         <form action="/updateTeam" method="post">
           <label htmlFor="position">
-            Choose the position: <br />
+            Swap with: <br />
           </label>
           <select name="position" id={`position${p}`}>
             <option value="1">{poke0}</option>
