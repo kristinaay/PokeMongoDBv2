@@ -7,6 +7,9 @@ import User from "./User.js";
 import Favorites from "./Favorites.js";
 import SignUp from "./SignUp.js";
 import SignIn from "./SignIn.js";
+import Delete from "./Delete.js";
+import EditProfile from "./EditProfile.js";
+import EditTrainer from "./EditTrainer.js";
 import Home from "./Home.js";
 import TrainerProfile from "./TrainerProfile.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -98,6 +101,9 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/signup" component={SignUp} />
             <Route path="/signin" component={SignIn} />
+            <Route path="/delete" component={Delete} />
+            <Route path="/editprofile" component={EditProfile} />
+            <Route path="/edittrainer" component={EditTrainer} />
             <Route path="/trainer" component={TrainerProfile} />
             <Route
               path="/favorites"

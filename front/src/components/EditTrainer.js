@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./styles/Trainer.css";
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
 
-function TrainerProfile(props) {
+function EditTrainer() {
   const [user, setUser] = useState("");
   useEffect(() => {
     const storedUser = localStorage.getItem("username");
@@ -12,24 +10,6 @@ function TrainerProfile(props) {
       setUser(storedUser);
     }
   }, []);
-
-  let trainer = [0, 0, 0, 0, 0];
-  console.log("props: ");
-  console.log(props.player);
-  if (props.trainer !== undefined) {
-    console.log(props.trainer);
-    trainer = props.trainer.filter((t) =>
-      t.name.toLowerCase().startsWith(user)
-    );
-    console.log(trainer);
-  }
-
-  console.log(trainer);
-
-  let age = trainer[0].age;
-  let gender = trainer[0].gender;
-  let region = trainer[0].region;
-  let icon = trainer[0];
 
   return (
     <div>
@@ -63,25 +43,51 @@ function TrainerProfile(props) {
         <div className="container-fluid d-flex justify-content-center">
           <div className="trainer">
             <div className="card-header">
-              <h3 className="cardname">Trainer's Card</h3>
+              <h3 className="cardname">Edit Your Trainer Information</h3>
             </div>
-            <div className="card-body">
-              <div> Name: {user !== 0 ? `${user}` : "Unknown"}</div>
-              <div>
-                {" "}
-                Age: {age !== undefined && age !== 0 ? `${age}` : "Unknown"}
+            <form action="/edittrainerinfo" method="POST">
+              <div className="card-body">
+                <div className="form-group">
+                  <label for="age">Age</label>
+                  <input
+                    type="text"
+                    id="age"
+                    name="age"
+                    className="form-control"
+                    placeholder="18"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label for="gender">Gender</label>
+                  <input
+                    type="text"
+                    id="gender"
+                    name="gender"
+                    className="form-control"
+                    placeholder="Girl"
+                  />
+                </div>
+                <div className="form group">
+                  <label for="region">Region</label>
+                  <input
+                    type="text"
+                    id="region"
+                    name="region"
+                    className="form-control"
+                    placeholder="North America"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="submit"
+                    className="btn btn-dark"
+                    style={{ marginTop: "10px" }}
+                    value="Submit"
+                  />
+                </div>
               </div>
-              <div>
-                {" "}
-                Gender:{" "}
-                {gender !== undefined && gender !== 0 ? `${gender}` : "Unknown"}
-              </div>
-              <div>
-                {" "}
-                Region:{" "}
-                {region !== undefined && region !== 0 ? `${region}` : "Unknown"}
-              </div>
-            </div>
+            </form>
             <div className="card-footer" id="trainer-footer">
               <p>Badges:</p>
               <img
@@ -90,9 +96,9 @@ function TrainerProfile(props) {
                 alt="Pokemon gym badges"
               />
             </div>
-            <Link to="/edittrainer">
+            <Link to="/trainer">
               <button className="button" type="button">
-                Edit Trainer Card
+                Back to Trainer Card
               </button>
             </Link>
             <Link to="/editprofile">
@@ -112,8 +118,4 @@ function TrainerProfile(props) {
   );
 }
 
-TrainerProfile.propTypes = {
-  trainer: PropTypes.array,
-};
-
-export default TrainerProfile;
+export default EditTrainer;
