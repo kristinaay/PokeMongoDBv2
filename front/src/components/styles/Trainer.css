@@ -33,11 +33,12 @@ body {
   margin-left: auto;
 }
 
-.card-footer-trainer {
+#trainer-footer {
   display: inline-flex;
   width: 600px;
   font-size: 20px;
   font-family: "Goldman", cursive;
+  color: #3c240f;
 }
 
 .badges {

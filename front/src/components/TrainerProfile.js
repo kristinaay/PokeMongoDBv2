@@ -11,18 +11,22 @@ function TrainerProfile(props) {
       setUser(storedUser);
     }
   }, []);
-  const trainer = [0, 0, 0, 0, 0];
+  let trainer = [0, 0, 0, 0, 0];
+  console.log(props.trainer);
   if (props.trainer !== undefined) {
     console.log(props.trainer);
     trainer = props.trainer.filter((t) =>
       t.name.toLowerCase().startsWith(user)
     );
+    console.log(trainer);
   }
 
-  let age = trainer[1];
-  let gender = trainer[2];
-  let region = trainer[3];
-  let icon = trainer[4];
+  console.log(trainer);
+
+  let age = trainer[0].age;
+  let gender = trainer[0].gender;
+  let region = trainer[0].region;
+  let icon = trainer[0];
 
   return (
     <div>
@@ -59,13 +63,13 @@ function TrainerProfile(props) {
               <h3 className="cardname">Trainer's Card</h3>
             </div>
             <div className="card-body">
-              <div> Name: {user ? { user } : "Unknown"}</div>
-              <div> Age: {age ? { age } : "Unknown"}</div>
-              <div> Gender: {gender ? { gender } : "Unknown"}</div>
-              <div> Region: {region ? { region } : "Unknown"}</div>
+              <div> Name: {user !== 0 ? `${user}` : "Unknown"}</div>
+              <div> Age: {age !== 0 ? `${age}` : "Unknown"}</div>
+              <div> Gender: {gender !== 0 ? `${gender}` : "Unknown"}</div>
+              <div> Region: {region !== 0 ? `${region}` : "Unknown"}</div>
             </div>
-            <div className="card-footer-trainer">
-              <p>Badges:</p>{" "}
+            <div className="card-footer" id="trainer-footer">
+              <p>Badges:</p>
               <img
                 className="badges"
                 src="./images/badges.png"
