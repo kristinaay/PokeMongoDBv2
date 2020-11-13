@@ -6,10 +6,13 @@ import { useState, useEffect } from "react";
 function Player(props) {
   const urlParams = new URLSearchParams(window.location.search);
   const username = urlParams.get("username");
-  sessionStorage.setItem("username", username);
+  if (username !== null && username !== undefined) {
+    sessionStorage.setItem("username", username);
+    localStorage.setItem("username", username);
+  }
   const [user, setUser] = useState("");
   useEffect(() => {
-    const storedUser = sessionStorage.getItem("username");
+    const storedUser = localStorage.getItem("username");
     if (storedUser) {
       setUser(storedUser);
     }

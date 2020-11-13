@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 function TrainerProfile(props) {
   const [user, setUser] = useState("");
   useEffect(() => {
-    const storedUser = sessionStorage.getItem("username");
+    const storedUser = localStorage.getItem("username");
     if (storedUser) {
       setUser(storedUser);
     }

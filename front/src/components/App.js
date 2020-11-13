@@ -25,7 +25,7 @@ function App() {
   const [showSignIn, setShowSignIn] = useState(false);
 
   useEffect(() => {
-    const storedUser = sessionStorage.getItem("username");
+    const storedUser = localStorage.getItem("username");
     if (storedUser) {
       setUser(storedUser);
     }
@@ -50,12 +50,12 @@ function App() {
       try {
         const _pokemon = await fetch("/pokemon").then((res) => res.json());
         let count = Object.keys(_pokemon).length;
-        if (count === 0){
+        if (count === 0) {
           const _newDatabase = await fetch("/start").then((res) => res.json());
           setPokemon(_newDatabase);
         } else {
           setPokemon(_pokemon);
-        }  
+        }
       } catch (err) {
         console.log("error ", err);
       }
