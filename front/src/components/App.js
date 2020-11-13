@@ -42,8 +42,6 @@ function App() {
       } catch (err) {
         console.log("error ", err);
       }
-      console.log("player");
-      console.log(player);
     };
     getPlayer();
   }, []); // Only run the first time; fetches user's team

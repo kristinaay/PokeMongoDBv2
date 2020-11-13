@@ -29,66 +29,68 @@ function SignUp() {
           </button>
         </Link>
       </nav>
-      <div className="SignUp">
-        <img
-          className="oak"
-          src="./images/oak.png"
-          alt="Professor Oak fom Pokemon"
-        />
+      <div className="containeroak">
+        <div className="SignUp">
+          <img
+            className="oak"
+            src="./images/oak.png"
+            alt="Professor Oak fom Pokemon"
+          />
 
-        <div className="container-fluid d-flex justify-content-center">
-          <div className="signcard">
-            <div className="card-header">
-              <h3>Become a trainer today!</h3>
-            </div>
-            <div className="card-body">
-              <form action="/signupp" method="POST">
-                <div className="form-group">
-                  <label for="username">Username</label>
-                  <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    className="form-control"
-                    placeholder="Misty"
-                  />
-                </div>
+          <div className="container-fluid d-flex justify-content-center">
+            <div className="signcard2">
+              <div className="card-header">
+                <h3>Become a trainer today!</h3>
+              </div>
+              <div className="card-body">
+                <form action="/signupp" method="POST">
+                  <div className="form-group">
+                    <label for="username">Username</label>
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      className="form-control"
+                      placeholder="Misty"
+                    />
+                  </div>
 
-                <div className="form-group">
-                  <label for="password">Password</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    className="form-control"
-                    placeholder="pikapika123"
-                  />
-                </div>
-                <div className="form group">
-                  <label for="password2">Verify Password</label>
-                  <input
-                    type="password"
-                    id="password2"
-                    name="password2"
-                    className="form-control"
-                    placeholder="pikapika123"
-                  />
-                </div>
-                {error ? <div className="danger">{error}</div> : ""}
-                <div className="form-group">
-                  <input
-                    type="submit"
-                    className="btn btn-dark"
-                    style={{ marginTop: "10px" }}
-                    value="Sign Up"
-                  />
-                </div>
-                <div className="form-group">
-                  Already a trainer? <Link to="/signin">Sign In</Link>
-                  <br />
-                  <Link to="/">Cancel and return home</Link>
-                </div>
-              </form>
+                  <div className="form-group">
+                    <label for="password">Password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      className="form-control"
+                      placeholder="pikapika123"
+                    />
+                  </div>
+                  <div className="form group">
+                    <label for="password2">Verify Password</label>
+                    <input
+                      type="password"
+                      id="password2"
+                      name="password2"
+                      className="form-control"
+                      placeholder="pikapika123"
+                    />
+                  </div>
+                  {error ? <div className="danger">{error}</div> : ""}
+                  <div className="form-group">
+                    <input
+                      type="submit"
+                      className="btn btn-dark"
+                      style={{ marginTop: "10px" }}
+                      value="Sign Up"
+                    />
+                  </div>
+                  <div className="form-group">
+                    Already a trainer? <Link to="/signin">Sign In</Link>
+                    <br />
+                    <Link to="/">Cancel and return home</Link>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>

@@ -1,23 +1,28 @@
 html,
 body {
   margin: 0px;
+  width: 100%;
+  height: 100%;
 }
 
+.containeroak {
+  margin: auto;
+}
 .SignUp {
   display: inline-flex;
+  width: 100%;
+  align-content: center;
 }
 
 .oak {
-  float: left;
-  object-fit: cover;
   height: 508px;
   width: 280px;
   margin-top: auto;
   margin-bottom: auto;
 }
-.signcard {
-  height: 475px;
-  width: 300px;
+.signcard2 {
+  height: 500px;
+  width: 325px;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -28,11 +33,6 @@ body {
 
 .card-body {
   color: #3c240f;
-}
-
-.container-fluid {
-  align-content: center;
-  height: 100vh;
 }
 
 a {
