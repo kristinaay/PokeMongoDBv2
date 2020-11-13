@@ -149,14 +149,14 @@ router.post("/newFav", async (req, res) => {
   let pokemon = req.body.newPokemon;
   let user = req.body.user;
   myDB.addFavorites(user, pokemon);
-  res.redirect("/"); // redirect to home page
+  res.redirect("/favorites"); // redirect to home page
 });
 
 router.post("/removeFav", async (req, res) => {
   let pokemon = req.body.removeMon;
   let user = req.body.player;
   await myDB.removeFavorite(user, pokemon);
-  res.redirect("/"); // redirect to home page
+  res.redirect("/favorites"); // redirect to home page
 });
 
 router.get("/start", async (req, res) => {
