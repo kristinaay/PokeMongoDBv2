@@ -104,13 +104,13 @@ function App() {
             <Route path="/delete" component={Delete} />
             <Route path="/editprofile" component={EditProfile} />
             <Route path="/edittrainer" component={EditTrainer} />
-            <Route path="/trainer" component={TrainerProfile} />
             <Route
               path="/favorites"
               render={(props) => (
                 <Favorites {...props} favorites={favorites} user={user} />
               )}
             />
+
             <Route
               path="/player"
               render={(props) => (
