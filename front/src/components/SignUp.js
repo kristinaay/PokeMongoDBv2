@@ -30,14 +30,15 @@ function SignUp() {
         </Link>
       </nav>
       <div className="containeroak">
-        <div className="SignUp">
+        <div className="row">
           <img
             className="oak"
             src="./images/oak.png"
             alt="Professor Oak fom Pokemon"
           />
-
-          <div className="container-fluid d-flex justify-content-center">
+        </div>
+        <div className="row">
+          <div className="container-fluid d-flex">
             <div className="signcard2">
               <div className="card-header">
                 <h3>Become a trainer today!</h3>
