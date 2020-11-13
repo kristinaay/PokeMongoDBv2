@@ -1,6 +1,6 @@
 # PokeMongoDB
 # Authors: 
-Alex Moeller and Ely Lam and Kristina Yin
+Alex Moeller, Ely Lam, and Kristina Yin
 # Class:
 Made for: https://johnguerra.co/classes/webDevelopment_fall_2020/
 # Project Objective: 
