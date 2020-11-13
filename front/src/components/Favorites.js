@@ -9,6 +9,16 @@ function Favorites(props) {
     if (count === 0) {
       return null;
     }
+    const teams = props.player.filter((t) => t.name.startsWith(props.user));
+    const pokemon = props.pokemon;
+    if (teams.length === 0) return null;
+    if (pokemon.length === 0) return null;
+    let poke0 = getPokemon(pokemon, teams[0].team[0]);
+    let poke1 = getPokemon(pokemon, teams[0].team[1]);
+    let poke2 = getPokemon(pokemon, teams[0].team[2]);
+    let poke3 = getPokemon(pokemon, teams[0].team[3]);
+    let poke4 = getPokemon(pokemon, teams[0].team[4]);
+    let poke5 = getPokemon(pokemon, teams[0].team[5]);
     const favPlayer = props.favorites.filter((t) =>
       t._id.startsWith(props.user)
     );
@@ -17,11 +27,11 @@ function Favorites(props) {
     console.log(favArray);
     return favArray.map((p) => (
       <li key={p}>
-        {p} (#{p}) <br />
+        #{p} <br />
         <img
           src={`./images/${p}.png`}
-          alt={`${p} (#${p}) Sprite`}
-          title={`${p} (#${p})`}
+          alt={`${p} Sprite`}
+          title={`${p}`}
         />{" "}
         <br />
         <form action="/updateTeam" method="post">
@@ -29,12 +39,12 @@ function Favorites(props) {
             Choose the position: <br />
           </label>
           <select name="position" id={`position${p}`}>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
+            <option value="1">{poke0}</option>
+            <option value="2">{poke1}</option>
+            <option value="3">{poke2}</option>
+            <option value="4">{poke3}</option>
+            <option value="5">{poke4}</option>
+            <option value="6">{poke5}</option>
           </select>
           <input
             type="hidden"
@@ -110,6 +120,12 @@ function Favorites(props) {
       <ol>{renderFavorites()}</ol>
     </div>
   );
+}
+
+function getPokemon(pokemon, number) {
+  const poke = pokemon.filter((p) => 
+    p._id.startsWith(number));
+  return poke[0].Pokemon;
 }
 
 Favorites.propTypes = {
