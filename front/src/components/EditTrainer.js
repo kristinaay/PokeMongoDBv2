@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import "./styles/editcard.css";
 
 function EditTrainer() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const msg = urlParams.get("msg");
   const [user, setUser] = useState("");
   useEffect(() => {
     const storedUser = localStorage.getItem("username");
@@ -61,6 +64,16 @@ function EditTrainer() {
             <form action="/edittrainerinfo" method="POST">
               <div className="card-body">
                 <div className="form-group">
+                  <label for="username">Username</label>
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    className="form-control"
+                    placeholder="Misty"
+                  />
+                </div>
+                <div className="form-group">
                   <label for="age">Age</label>
                   <input
                     type="text"
@@ -109,6 +122,7 @@ function EditTrainer() {
                 alt="Pokemon gym badges"
               />
             </div>
+            <div className="msg"> {msg ? `${msg}` : ""}</div>
             <Link to="/trainer">
               <button className="button" type="button">
                 Back to Trainer Card

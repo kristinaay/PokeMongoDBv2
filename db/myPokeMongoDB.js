@@ -54,6 +54,24 @@ function MyDB() {
         return trainers.find({}).toArray(); // return the trainers profile
     };
 
+    myDB.createTrainer = async (name, age, gender, region) => {
+        const client = new MongoClient(uri, { useUnifiedTopology: true });
+        await client.connect();
+        const db = client.db("pokedb");
+        const players = db.collection("trainers");
+        const result = await players.find({ name: name }).toArray();
+        if (result.length == 0) {
+            await players.insertOne({
+                name: name,
+                age: age,
+                gender: gender,
+                region: region,
+            });
+        }
+        client.close();
+        return;
+    };
+
     myDB.setPokemon = async (player, team, dex, newPokemon) => {
         const tempString = team + "." + dex;
         const client = new MongoClient(uri, { useUnifiedTopology: true });

@@ -68,17 +68,6 @@ function EditProfile() {
                 />
               </div>
 
-              <div className="form-group">
-                <label for="newusername">New Username:</label>
-                <input
-                  type="text"
-                  id="newusername"
-                  name="newusername"
-                  className="form-control"
-                  placeholder="Ash Ketchum"
-                  form="update"
-                />
-              </div>
               <div className="form group">
                 <label for="newpassword">New Password:</label>
                 <input
@@ -104,10 +93,22 @@ function EditProfile() {
                 </div>
               </div>
             </form>
-            <div className="form-group">
-              <Link to="/table">Cancel and return to previous page.</Link>
-            </div>
-          </div>
+          </div>{" "}
+          <Link to="/trainer">
+            <button className="button" type="button">
+              Back to Trainer Card
+            </button>
+          </Link>
+          <Link to="/editprofile">
+            <button className="button" type="button">
+              Edit Account Info
+            </button>
+          </Link>
+          <Link to="/delete">
+            <button className="button" type="button">
+              Delete Account
+            </button>
+          </Link>
         </div>
       </div>
     </div>

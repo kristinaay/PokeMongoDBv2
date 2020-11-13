@@ -124,36 +124,64 @@ router.post("/signupp", async (req, res, next) => {
 router.post("/update", async (req, res, next) => {
   const users = await myDB.initializeUsers();
   const info = req.body;
-  const user = req.body.username;
-  await myDB.createTeam(user);
-  await myDB.createFavorites(user);
 
-  if (!req.isAuthenticated()) {
-    res.redirect("/signin");
-  } else {
-    users.findOne({ username: info.username }, function (err, user) {
-      if (err) {
-        return next(err);
-      }
-      if (!user) {
-        res.redirect("/userprofile?error=User not found, please try again.");
-      } else {
-        users.updateOne(
-          {
+  users.findOne({ username: info.username }, function (err, user) {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      res.redirect("/editprofile?error=User not found, please try again.");
+    } else {
+      users.updateOne(
+        {
+          username: info.username,
+        },
+        {
+          $set: {
             username: info.username,
+            password: authUtils.encrypt(info.newpassword),
           },
-          {
-            $set: {
-              username: info.newusername,
-              password: authUtils.encrypt(info.newpassword),
-            },
-          }
-        );
+        }
+      );
 
-        res.redirect("/editprofile?msg=Profile updated successfully.");
-      }
-    });
-  }
+      res.redirect("/editprofile?msg=Profile updated successfully.");
+    }
+  });
+});
+
+router.post("/edittrainerinfo", async (req, res, next) => {
+  const trainers = await myDB.initializeTrainers();
+  const info = req.body;
+
+  trainers.findOne({ name: info.username }, function (err, user) {
+    if (err) {
+      return next(err);
+    }
+    if (user) {
+      trainers.updateOne(
+        {
+          name: info.username,
+        },
+        {
+          $set: {
+            name: info.username,
+            age: info.age,
+            gender: info.gender,
+            region: info.region,
+          },
+        }
+      );
+
+      res.redirect(
+        "/edittrainer?msg=Trainer information updated successfully."
+      );
+    } else {
+      myDB.createTrainer(info.username, info.age, info.gender, info.region);
+      res.redirect(
+        "/edittrainer?msg=Trainer information updated successfully!"
+      );
+    }
+  });
 });
 
 router.get("/player", async (req, res) => {
