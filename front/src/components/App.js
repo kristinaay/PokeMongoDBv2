@@ -46,9 +46,16 @@ function App() {
 
   useEffect(() => {
     const getPokemon = async () => {
+      console.log("getting Pokemon");
       try {
         const _pokemon = await fetch("/pokemon").then((res) => res.json());
-        setPokemon(_pokemon);
+        let count = Object.keys(_pokemon).length;
+        if (count === 0){
+          const _newDatabase = await fetch("/start").then((res) => res.json());
+          setPokemon(_newDatabase);
+        } else {
+          setPokemon(_pokemon);
+        }  
       } catch (err) {
         console.log("error ", err);
       }

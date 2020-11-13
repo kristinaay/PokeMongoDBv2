@@ -10,7 +10,7 @@ function Pokemon(props) {
     return props.pokemon
       .filter(
         (p) =>
-          p.pokemon && p.pokemon.toLowerCase().startsWith(search.toLowerCase())
+          p.Pokemon && p.Pokemon.toLowerCase().startsWith(search.toLowerCase())
       )
       .map((p) => (
         <li key={p._id}>
