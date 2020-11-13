@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 function EditProfile() {
   const urlParams = new URLSearchParams(window.location.search);
   const error = urlParams.get("error");
+  const msg = urlParams.get("msg");
   return (
     <div className="user">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -90,6 +91,8 @@ function EditProfile() {
                 />
               </div>
               {error ? <div className="danger">{error}</div> : ""}
+              {msg ? `${msg}` : ""}
+              <br />
               <div className="submitButtons">
                 <div className="form-group">
                   <input

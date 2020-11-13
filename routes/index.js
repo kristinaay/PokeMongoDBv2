@@ -121,6 +121,38 @@ router.post("/signupp", async (req, res, next) => {
   }
 }); //pokedb
 
+router.post("/update", async (req, res, next) => {
+  const users = await myDB.initializeUsers();
+  const info = req.body;
+
+  if (!req.isAuthenticated()) {
+    res.redirect("/signin");
+  } else {
+    users.findOne({ username: info.username }, function (err, user) {
+      if (err) {
+        return next(err);
+      }
+      if (!user) {
+        res.redirect("/userprofile?error=User not found, please try again.");
+      } else {
+        users.updateOne(
+          {
+            username: info.username,
+          },
+          {
+            $set: {
+              username: info.newusername,
+              password: authUtils.encrypt(info.newpassword),
+            },
+          }
+        );
+
+        res.redirect("/editprofile?msg=Profile updated successfully.");
+      }
+    });
+  }
+});
+
 router.get("/player", async (req, res) => {
   const player = await myDB.getPlayer("alex");
   res.json(player); // get player db
