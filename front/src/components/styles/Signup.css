@@ -6,25 +6,24 @@ body {
 }
 
 .containeroak {
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  width: 80%;
 }
-.SignUp {
-  display: inline-flex;
-  width: 100%;
-  align-content: center;
+
+.row {
+  padding: 2%;
 }
 
 .oak {
   height: 508px;
   width: 280px;
-  margin-top: auto;
-  margin-bottom: auto;
 }
+
 .signcard2 {
   height: 500px;
   width: 325px;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 .card-header {
