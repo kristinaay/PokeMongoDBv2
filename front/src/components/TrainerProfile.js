@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/Trainer.css";
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 function TrainerProfile(props) {
   const [user, setUser] = useState("");
@@ -11,8 +12,10 @@ function TrainerProfile(props) {
       setUser(storedUser);
     }
   }, []);
+
   let trainer = [0, 0, 0, 0, 0];
-  console.log(props.trainer);
+  console.log("props: ");
+  console.log(props.player);
   if (props.trainer !== undefined) {
     console.log(props.trainer);
     trainer = props.trainer.filter((t) =>
@@ -64,9 +67,20 @@ function TrainerProfile(props) {
             </div>
             <div className="card-body">
               <div> Name: {user !== 0 ? `${user}` : "Unknown"}</div>
-              <div> Age: {age !== 0 ? `${age}` : "Unknown"}</div>
-              <div> Gender: {gender !== 0 ? `${gender}` : "Unknown"}</div>
-              <div> Region: {region !== 0 ? `${region}` : "Unknown"}</div>
+              <div>
+                {" "}
+                Age: {age !== undefined && age !== 0 ? `${age}` : "Unknown"}
+              </div>
+              <div>
+                {" "}
+                Gender:{" "}
+                {gender !== undefined && gender !== 0 ? `${gender}` : "Unknown"}
+              </div>
+              <div>
+                {" "}
+                Region:{" "}
+                {region !== undefined && region !== 0 ? `${region}` : "Unknown"}
+              </div>
             </div>
             <div className="card-footer" id="trainer-footer">
               <p>Badges:</p>
@@ -82,5 +96,9 @@ function TrainerProfile(props) {
     </div>
   );
 }
+
+TrainerProfile.propTypes = {
+  trainer: PropTypes.array,
+};
 
 export default TrainerProfile;
