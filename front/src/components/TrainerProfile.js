@@ -19,7 +19,7 @@ function TrainerProfile(props) {
   if (props.trainer !== undefined) {
     console.log(props.trainer);
     trainer = props.trainer.filter((t) =>
-      t.name.toLowerCase().startsWith(user)
+      t.name.toLowerCase().startsWith(props.user)
     );
     console.log(trainer);
   }
