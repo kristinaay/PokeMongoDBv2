@@ -68,14 +68,13 @@ function SignIn() {
                   </div>
                   <br />
                   {error ? <div className="danger">{error}</div> : ""}
-                  <div className="form-group">
-                    <input
-                      type="submit"
-                      className="btn btn-dark"
-                      style={{ marginTop: "10px" }}
-                      value="Sign In"
-                    />
-                  </div>
+
+                  <input
+                    type="submit"
+                    className="button5"
+                    style={{ marginTop: "10px" }}
+                    value="Sign In"
+                  />
                 </form>
               </div>
               <div className="card-footer">
