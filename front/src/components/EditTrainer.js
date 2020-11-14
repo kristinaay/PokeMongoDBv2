@@ -137,6 +137,7 @@ function EditTrainer() {
                   <input
                     type="submit"
                     className="btn btn-dark"
+                    id="submit"
                     style={{ marginTop: "10px" }}
                     value="Submit"
                   />
