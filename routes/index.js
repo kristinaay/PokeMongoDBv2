@@ -152,37 +152,45 @@ router.post("/update", async (req, res, next) => {
 router.post("/edittrainerinfo", async (req, res, next) => {
   const trainers = await myDB.initializeTrainers();
   const info = req.body;
-
-  trainers.findOne({ name: info.username }, function (err, user) {
-    if (err) {
-      return next(err);
-    }
-    if (user) {
-      trainers.updateOne(
-        {
-          name: info.username,
-        },
-        {
-          $set: {
+  if (
+    info.username === "" ||
+    info.age === "" ||
+    info.gender === "" ||
+    info.region === ""
+  ) {
+    res.redirect("/edittrainer?error=Please do not leave any field blank.");
+  } else {
+    trainers.findOne({ name: info.username }, function (err, user) {
+      if (err) {
+        return next(err);
+      }
+      if (user) {
+        trainers.updateOne(
+          {
             name: info.username,
-            age: info.age,
-            gender: info.gender,
-            region: info.region,
-            icon: info.trainer,
           },
-        }
-      );
+          {
+            $set: {
+              name: info.username,
+              age: info.age,
+              gender: info.gender,
+              region: info.region,
+              icon: info.trainer,
+            },
+          }
+        );
 
-      res.redirect(
-        "/edittrainer?msg=Trainer information updated successfully."
-      );
-    } else {
-      myDB.createTrainer(info.username, info.age, info.gender, info.region);
-      res.redirect(
-        "/edittrainer?msg=Trainer information updated successfully!"
-      );
-    }
-  });
+        res.redirect(
+          "/edittrainer?msg=Trainer information updated successfully."
+        );
+      } else {
+        myDB.createTrainer(info.username, info.age, info.gender, info.region);
+        res.redirect(
+          "/edittrainer?msg=Trainer information updated successfully!"
+        );
+      }
+    });
+  }
 });
 
 router.get("/player", async (req, res) => {

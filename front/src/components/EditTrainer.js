@@ -6,6 +6,7 @@ import "./styles/editcard.css";
 function EditTrainer() {
   const urlParams = new URLSearchParams(window.location.search);
   const msg = urlParams.get("msg");
+  const error = urlParams.get("error");
   const [user, setUser] = useState("");
   useEffect(() => {
     const storedUser = localStorage.getItem("username");
@@ -151,6 +152,7 @@ function EditTrainer() {
               />
             </div>
             <div className="msg"> {msg ? `${msg}` : ""}</div>
+            {error ? <div className="danger">{error}</div> : ""}
             <div className="links">
               <Link to="/trainer">
                 <button className="button" type="button">
