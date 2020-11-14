@@ -66,9 +66,7 @@ function Player(props) {
   };
 
   const renderStats = () => {
-    const teams = props.player.filter((t) =>
-      t.name.toLowerCase().startsWith(props.user)
-    );
+    const teams = props.player.filter((t) => t.name.startsWith(props.user));
     console.log("getting teams", teams);
     if (teams.length === 0) return null;
     console.log("getting team in player");
