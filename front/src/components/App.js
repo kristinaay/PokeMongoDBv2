@@ -8,6 +8,7 @@ import Favorites from "./Favorites.js";
 import SignUp from "./SignUp.js";
 import SignIn from "./SignIn.js";
 import Home from "./Home.js";
+import Delete from "./Delete.js";
 import EditProfile from "./EditProfile.js";
 import EditTrainer from "./EditTrainer.js";
 import TrainerProfile from "./TrainerProfile.js";
@@ -113,10 +114,17 @@ function App() {
             />
             <Route path="/editprofile" component={EditProfile} />
             <Route path="/edittrainer" component={EditTrainer} />
+            <Route path="/delete" component={Delete} />
             <Route
               path="/favorites"
               render={(props) => (
-                <Favorites {...props} favorites={favorites} user={user} player={player} pokemon={pokemon}/>
+                <Favorites
+                  {...props}
+                  favorites={favorites}
+                  user={user}
+                  player={player}
+                  pokemon={pokemon}
+                />
               )}
             />
             <Route

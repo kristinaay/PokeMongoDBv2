@@ -222,6 +222,25 @@ router.post("/updateTeam", async (req, res) => {
   res.redirect("/player"); // redirect to home page
 });
 
+router.post("/deletee", async (req, res, next) => {
+  const users = await myDB.initializeUsers();
+  const info = req.body;
+
+  users.findOne({ username: info.username }, function (err, user) {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      res.redirect("/delete?error=User not found, please try again.");
+    } else {
+      users.deleteOne({
+        username: info.username,
+      });
+      res.redirect("/delete?msg=Account was successfully deleted.");
+    }
+  });
+});
+
 router.post("/newFav", async (req, res) => {
   let pokemon = req.body.newPokemon;
   let user = req.body.user;
