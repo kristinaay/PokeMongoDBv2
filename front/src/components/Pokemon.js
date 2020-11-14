@@ -144,19 +144,19 @@ function Pokemon(props) {
         <br />
         <ol>{renderPokemon()}</ol>
       </div>
+      <br /> <br />
     </div>
   );
 }
 
 function getPokemon(pokemon, number) {
-  const poke = pokemon.filter((p) => 
-    p._id.startsWith(number));
+  const poke = pokemon.filter((p) => p._id.startsWith(number));
   return poke[0].Pokemon;
 }
 
 Pokemon.propTypes = {
   pokemon: PropTypes.array,
-  player: PropTypes.array
+  player: PropTypes.array,
 };
 
 export default Pokemon;
