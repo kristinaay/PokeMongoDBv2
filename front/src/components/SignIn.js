@@ -69,12 +69,9 @@ function SignIn() {
                   <br />
                   {error ? <div className="danger">{error}</div> : ""}
 
-                  <input
-                    type="submit"
-                    className="button5"
-                    style={{ marginTop: "10px" }}
-                    value="Sign In"
-                  />
+                  <button type="submit" className="button6">
+                    Sign In
+                  </button>
                 </form>
               </div>
               <div className="card-footer">

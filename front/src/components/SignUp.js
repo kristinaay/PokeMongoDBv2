@@ -77,13 +77,10 @@ function SignUp() {
                     />
                   </div>
                   {error ? <div className="danger">{error}</div> : ""}
-
-                  <input
-                    type="submit"
-                    className="button5"
-                    style={{ marginTop: "10px" }}
-                    value="Sign Up"
-                  />
+                  <br />
+                  <button type="submit" className="button6">
+                    Sign Up
+                  </button>
                 </form>
               </div>
               <div className="card-footer">
