@@ -113,22 +113,22 @@ function Player(props) {
     }
     return (
       <div>
-        <li>Bug : {statMap.get("Bug")}</li>
-        <li>Dragon : {statMap.get("Dragon")}</li>
-        <li>Electric : {statMap.get("Electric")}</li>
-        <li>Fighting : {statMap.get("Fighting")}</li>
-        <li>Flying : {statMap.get("Flying")}</li>
-        <li>Fire : {statMap.get("Fire")}</li>
-        <li>Ghost : {statMap.get("Ghost")}</li>
-        <li>Grass : {statMap.get("Grass")}</li>
-        <li>Ground : {statMap.get("Ground")}</li>
-        <li>Ice : {statMap.get("Ice")}</li>
-        <li>Normal : {statMap.get("Normal")}</li>
-        <li>Poison : {statMap.get("Poison")}</li>
-        <li>Psychic : {statMap.get("Psychic")}</li>
-        <li>Rock : {statMap.get("Rock")}</li>
-        <li>Steel : {statMap.get("Steel")}</li>
-        <li>Water : {statMap.get("Water")}</li>
+        <li><img class="type" src={`./images/Bug.png`} alt={`Bug type icon`} /> : {statMap.get("Bug")}</li>
+        <li><img class="type" src={`./images/Dragon.png`} alt={`Dragon type icon`} /> : {statMap.get("Dragon")}</li>
+        <li><img class="type" src={`./images/Electric.png`} alt={`Electric type icon`} /> : {statMap.get("Electric")}</li>
+        <li><img class="type" src={`./images/Fighting.png`} alt={`Fighting type icon`} /> : {statMap.get("Fighting")}</li>
+        <li><img class="type" src={`./images/Flying.png`} alt={`Flying type icon`} /> : {statMap.get("Flying")}</li>
+        <li><img class="type" src={`./images/Fire.png`} alt={`Fire type icon`} /> : {statMap.get("Fire")}</li>
+        <li><img class="type" src={`./images/Ghost.png`} alt={`Ghost type icon`} /> : {statMap.get("Ghost")}</li>
+        <li><img class="type" src={`./images/Grass.png`} alt={`Grass type icon`} /> : {statMap.get("Grass")}</li>
+        <li><img class="type" src={`./images/Ground.png`} alt={`Ground type icon`} /> : {statMap.get("Ground")}</li>
+        <li><img class="type" src={`./images/Ice.png`} alt={`Ice type icon`} /> : {statMap.get("Ice")}</li>
+        <li><img class="type" src={`./images/Normal.png`} alt={`Normal type icon`} /> : {statMap.get("Normal")}</li>
+        <li><img class="type" src={`./images/Poison.png`} alt={`Poison type icon`} /> : {statMap.get("Poison")}</li>
+        <li><img class="type" src={`./images/Psychic.png`} alt={`Psychic type icon`} /> : {statMap.get("Psychic")}</li>
+        <li><img class="type" src={`./images/Rock.png`} alt={`Rock type icon`} /> : {statMap.get("Rock")}</li>
+        <li><img class="type" src={`./images/Steel.png`} alt={`Steel type icon`} /> : {statMap.get("Steel")}</li>
+        <li><img class="type" src={`./images/Water.png`} alt={`Water type icon`} /> : {statMap.get("Water")}</li>
       </div>
     );
   };
