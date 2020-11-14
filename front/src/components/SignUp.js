@@ -85,12 +85,12 @@ function SignUp() {
                       value="Sign Up"
                     />
                   </div>
-                  <div className="form-group">
-                    Already a trainer? <Link to="/signin">Sign In</Link>
-                    <br />
-                    <Link to="/">Cancel and return home</Link>
-                  </div>
                 </form>
+              </div>{" "}
+              <div className="card-footer">
+                Already a trainer? <Link to="/signin">Sign In</Link>
+                <br />
+                <Link to="/">Cancel and return home</Link>
               </div>
             </div>
           </div>
