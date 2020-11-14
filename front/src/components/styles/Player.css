@@ -1,5 +1,16 @@
+ol {
+  font-family: "Goldman", cursive;
+  width: 100%;
+}
+
 ul {
   columns: 8;
+  font-family: "Goldman", cursive;
+}
+
+.type {
+  height: 20px;
+  width: 80px;
 }
 
 .myButton2 {
