@@ -54,7 +54,7 @@ function Delete() {
             <h3>Delete Account</h3>
           </div>
 
-          <div className="card-body" id="card-body-edit-prof">
+          <div className="card-body" id="card-body-delete">
             {" "}
             <div>
               Are you sure you wish to end your pokemon journey? <br />

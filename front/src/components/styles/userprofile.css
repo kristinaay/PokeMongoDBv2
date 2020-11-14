@@ -19,6 +19,8 @@ body {
 #card-body-edit-prof {
   margin-left: 20px;
   margin-right: 20px;
+  color: black;
+  font-size: 15px;
 }
 
 .card-body {

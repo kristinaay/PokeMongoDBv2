@@ -22,3 +22,8 @@
   position: relative;
   top: 1px;
 }
+
+#card-body-delete {
+  color: black;
+  font-size: 15px;
+}
