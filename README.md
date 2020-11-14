@@ -20,4 +20,4 @@ Develop a web app that allows users to create their own team of Pokemon and see 
   Trainer artwork: https://archives.bulbagarden.net/wiki/Category:Trainer_class_artwork \
   Pokemon artwork: https://www.pokemon.com/us/pokedex/ \
   Homepage photo: Aaron Burdern @aaronburden on Unsplash \
-  Professor Oak artwork: https://bulbapedia.bulbagarden.net/wiki/Professor_Oak \
+  Professor Oak artwork: https://bulbapedia.bulbagarden.net/wiki/Professor_Oak 
