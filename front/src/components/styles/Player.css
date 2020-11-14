@@ -3,9 +3,44 @@ ol {
   width: 100%;
 }
 
-ul {
-  columns: 8;
+.statContainer {
+  clear: both;
+  display: flex;
+  justify-content: center;
+}
+
+.statWord {
   font-family: "Goldman", cursive;
+  text-align: center;
+}
+
+.weakWords {
+  display: flex;
+  justify-content: center;
+}
+
+.weakWord, .vWeakWord {
+  font-family: "Goldman", cursive;
+  width: 50%;
+  text-align: center;
+}
+
+.weakContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.breakdown {
+  columns: 8;
+  text-align: center;
+  font-family: "Goldman", cursive;
+}
+
+.weak, .vWeak {
+  columns: 3;
+  font-family: "Goldman", cursive;
+  text-align: center;
+  width: 50%;
 }
 
 .type {
