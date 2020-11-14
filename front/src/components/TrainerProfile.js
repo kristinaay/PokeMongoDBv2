@@ -30,7 +30,7 @@ function TrainerProfile(props) {
     age = trainer[0].age;
     gender = trainer[0].gender;
     region = trainer[0].region;
-    icon = trainer;
+    icon = trainer[0].icon;
   }
 
   console.log(trainer);
@@ -79,25 +79,40 @@ function TrainerProfile(props) {
       <div className="TrainerCard">
         <div className="container-fluid d-flex justify-content-center">
           <div className="trainer">
-            <div className="card-header">
+            <div className="card-header" id="card-header-trainer">
               <h3 className="cardname">Trainer's Card</h3>
             </div>
-            <div className="card-body">
-              <div> Name: {user !== 0 ? `${user}` : "Unknown"}</div>
-              <div>
-                {" "}
-                Age: {age !== undefined && age !== 0 ? `${age}` : "Unknown"}
+            <div className="card-body-trainer">
+              <div className="card-body-inner">
+                <br />
+                <div> Name: {user !== 0 ? `${user}` : "Unknown"}</div> <br />
+                <div>
+                  {" "}
+                  Age: {age !== undefined && age !== 0 ? `${age}` : "Unknown"}
+                </div>
+                <br />
+                <div>
+                  {" "}
+                  Gender:{" "}
+                  {gender !== undefined && gender !== 0
+                    ? `${gender}`
+                    : "Unknown"}
+                </div>
+                <br />
+                <div>
+                  {" "}
+                  Region:{" "}
+                  {region !== undefined && region !== 0
+                    ? `${region}`
+                    : "Unknown"}
+                </div>
+                <br />
               </div>
-              <div>
-                {" "}
-                Gender:{" "}
-                {gender !== undefined && gender !== 0 ? `${gender}` : "Unknown"}
-              </div>
-              <div>
-                {" "}
-                Region:{" "}
-                {region !== undefined && region !== 0 ? `${region}` : "Unknown"}
-              </div>
+              <img
+                className="trainerpic"
+                src={"./images/" + icon + ".png"}
+                alt="Trainer"
+              />
             </div>
             <div className="card-footer" id="trainer-footer">
               <p>Badges:</p>
@@ -107,21 +122,23 @@ function TrainerProfile(props) {
                 alt="Pokemon gym badges"
               />
             </div>
-            <Link to="/edittrainer">
-              <button className="button" type="button">
-                Edit Trainer Card
-              </button>
-            </Link>
-            <Link to="/editprofile">
-              <button className="button" type="button">
-                Edit Account Info
-              </button>
-            </Link>
-            <Link to="/delete">
-              <button className="button" type="button">
-                Delete Account
-              </button>
-            </Link>
+            <div className="links">
+              <Link to="/edittrainer">
+                <button className="button" type="button">
+                  Edit Trainer Card
+                </button>
+              </Link>
+              <Link to="/editprofile">
+                <button className="button" type="button">
+                  Edit Account Info
+                </button>
+              </Link>
+              <Link to="/delete">
+                <button className="button" type="button">
+                  Delete Account
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

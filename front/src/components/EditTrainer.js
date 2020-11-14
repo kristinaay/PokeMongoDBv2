@@ -58,51 +58,79 @@ function EditTrainer() {
       <div className="EditCard">
         <div className="container-fluid d-flex justify-content-center">
           <div className="edit">
-            <div className="card-header">
+            <div className="card-header" id="card-header-edit">
               <h3 className="editcardname">Edit Your Trainer Information</h3>
             </div>
             <form action="/edittrainerinfo" method="POST">
-              <div className="card-body">
-                <div className="form-group">
-                  <label for="username">Username</label>
-                  <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    className="form-control"
-                    placeholder="Misty"
-                  />
+              <div className="card-body-edit">
+                <div className="first">
+                  <div className="form-group">
+                    <label for="username">Current Username</label>
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      className="form-control"
+                      placeholder="Misty"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label for="age">Age</label>
+                    <input
+                      type="text"
+                      id="age"
+                      name="age"
+                      className="form-control"
+                      placeholder="18"
+                    />
+                  </div>
                 </div>
-                <div className="form-group">
-                  <label for="age">Age</label>
-                  <input
-                    type="text"
-                    id="age"
-                    name="age"
-                    className="form-control"
-                    placeholder="18"
-                  />
+                <div className="second">
+                  <div className="form-group">
+                    <label for="gender">Gender</label>
+                    <input
+                      type="text"
+                      id="gender"
+                      name="gender"
+                      className="form-control"
+                      placeholder="Girl"
+                    />
+                  </div>
+                  <div className="form group">
+                    <label for="region">Region</label>
+                    <input
+                      type="text"
+                      id="region"
+                      name="region"
+                      className="form-control"
+                      placeholder="North America"
+                    />
+                  </div>
                 </div>
-
-                <div className="form-group">
-                  <label for="gender">Gender</label>
-                  <input
-                    type="text"
-                    id="gender"
-                    name="gender"
-                    className="form-control"
-                    placeholder="Girl"
-                  />
-                </div>
-                <div className="form group">
-                  <label for="region">Region</label>
-                  <input
-                    type="text"
-                    id="region"
-                    name="region"
-                    className="form-control"
-                    placeholder="North America"
-                  />
+                <div className="third">
+                  <label for="cars">Choose your trainer: </label> <br />
+                  <select id="trainers" name="trainer">
+                    <option value="0">Cute Blonde Girl</option>
+                    <option value="1">Karate Girl</option>
+                    <option value="2">Elegant Lady</option>
+                    <option value="3">Swimmer Girl</option>
+                    <option value="4">Swimmer Boy</option>
+                    <option value="5">Rich Boy</option>
+                    <option value="6">Sailor Boy</option>
+                    <option value="7">Scuba Boy</option>
+                    <option value="8">Ranger Boy</option>
+                    <option value="9">Ranger Girl</option>
+                    <option value="11">Ninja Boy</option>
+                    <option value="12">Casual Girl</option>
+                    <option value="13">Suspicious Boy</option>
+                    <option value="14">Psychic Old Man</option>
+                    <option value="16">Bug Boy</option>
+                    <option value="17">Bikini Girl</option>
+                    <option value="19">Cute Pink Girl</option>
+                    <option value="20">Punk Boy</option>
+                    <option value="21">Tourist Girl</option>
+                    <option value="22">Tourist Boy</option>
+                  </select>
                 </div>
                 <div className="form-group">
                   <input
@@ -123,21 +151,23 @@ function EditTrainer() {
               />
             </div>
             <div className="msg"> {msg ? `${msg}` : ""}</div>
-            <Link to="/trainer">
-              <button className="button" type="button">
-                Back to Trainer Card
-              </button>
-            </Link>
-            <Link to="/editprofile">
-              <button className="button" type="button">
-                Edit Account Info
-              </button>
-            </Link>
-            <Link to="/delete">
-              <button className="button" type="button">
-                Delete Account
-              </button>
-            </Link>
+            <div className="links">
+              <Link to="/trainer">
+                <button className="button" type="button">
+                  Back to Trainer Card
+                </button>
+              </Link>
+              <Link to="/editprofile">
+                <button className="button" type="button">
+                  Edit Account Info
+                </button>
+              </Link>
+              <Link to="/delete">
+                <button className="button" type="button">
+                  Delete Account
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

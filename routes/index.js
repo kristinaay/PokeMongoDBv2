@@ -168,6 +168,7 @@ router.post("/edittrainerinfo", async (req, res, next) => {
             age: info.age,
             gender: info.gender,
             region: info.region,
+            icon: info.trainer,
           },
         }
       );
