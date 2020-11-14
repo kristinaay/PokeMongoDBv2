@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./styles/Favorites.css";
 import { Link } from "react-router-dom";
 
 function Favorites(props) {
@@ -54,7 +55,9 @@ function Favorites(props) {
           />
           <input type="hidden" name="user" id="user" value={`${props.user}`} />
           <br />
-          <button type="submit">Add to team!</button>
+          <button className="subButton" type="submit">
+            Add to team!
+          </button>
         </form>
         <form action="/removeFav" method="post">
           <input
@@ -69,7 +72,9 @@ function Favorites(props) {
             id="user"
             value={`${props.user}`}
           />
-          <button type="submit">Delete favorite</button>
+          <button className="subButton" type="submit">
+            Delete favorite
+          </button>
         </form>
         <br />
       </li>
@@ -123,8 +128,7 @@ function Favorites(props) {
 }
 
 function getPokemon(pokemon, number) {
-  const poke = pokemon.filter((p) => 
-    p._id.startsWith(number));
+  const poke = pokemon.filter((p) => p._id.startsWith(number));
   return poke[0].Pokemon;
 }
 
