@@ -21,3 +21,5 @@ Develop a web app that allows users to create their own team of Pokemon and see 
   Pokemon artwork: https://www.pokemon.com/us/pokedex/ \
   Homepage photo: Aaron Burdern @aaronburden on Unsplash \
   Professor Oak artwork: https://bulbapedia.bulbagarden.net/wiki/Professor_Oak 
+# Notes:
+  This is an academic, non-commericial project. Contact any developer to have your content removed from the site.
