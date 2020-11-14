@@ -87,6 +87,7 @@ function EditProfile() {
                   <input
                     type="submit"
                     className="buttons"
+                    id="updateacc"
                     value="Update Account"
                     form="update"
                   />
