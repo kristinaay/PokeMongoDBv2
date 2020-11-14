@@ -66,8 +66,9 @@ function Player(props) {
   };
 
   const renderStats = () => {
-    console.log("render");
-    const teams = props.player.filter((t) => t.name.startsWith(props.user));
+    const teams = props.player.filter((t) =>
+      t.name.toLowerCase().startsWith(props.user)
+    );
     console.log("getting teams", teams);
     if (teams.length === 0) return null;
     console.log("getting team in player");
@@ -110,120 +111,233 @@ function Player(props) {
         statMap.set(type_2, statMap.get(type_2) + 1);
       }
     }
+
+    if (statMap === undefined) return null;
+    let weakBug =
+      statMap.get("Fire") + statMap.get("Flying") + statMap.get("Rock");
+    let weakDragon = statMap.get("Ice") + statMap.get("Dragon");
+    let weakElectric = statMap.get("Ground");
+    let weakFighting = statMap.get("Flying") + statMap.get("Psychic");
+    let weakFlying =
+      statMap.get("Electric") + statMap.get("Ice") + statMap.get("Rock");
+    let weakFire =
+      statMap.get("Water") + statMap.get("Ground") + statMap.get("Rock");
+    let weakGhost = statMap.get("Ghost");
+    let weakGrass =
+      statMap.get("Fire") +
+      statMap.get("Flying") +
+      statMap.get("Poison") +
+      statMap.get("Bug");
+    let weakGround =
+      statMap.get("Water") + statMap.get("Grass") + statMap.get("Ice");
+    let weakIce =
+      statMap.get("Fire") +
+      statMap.get("Fighting") +
+      statMap.get("Rock") +
+      statMap.get("Steel");
+    let weakNormal = statMap.get("Fighting");
+    let weakPoison = statMap.get("Poison") + statMap.get("Psychic");
+    let weakPsychic = statMap.get("Bug") + statMap.get("Ghost");
+    let weakRock =
+      statMap.get("Water") +
+      statMap.get("Grass") +
+      statMap.get("Fighting") +
+      statMap.get("Ground");
+    let weakSteel =
+      statMap.get("Fire") + statMap.get("Fighting") + statMap.get("Ground");
+    let weakWater = statMap.get("Electric") + statMap.get("Grass");
+
+    let weak = [];
+    let veryWeak = [];
+
+    if (weakBug > 2) veryWeak.push("Bug");
+    else if (weakBug === 2) weak.push("Bug");
+    if (weakDragon > 2) veryWeak.push("Dragon");
+    else if (weakDragon === 2) weak.push("Dragon");
+    if (weakElectric > 2) veryWeak.push("Electric");
+    else if (weakElectric === 2) weak.push("Electric");
+    if (weakFighting > 2) veryWeak.push("Fighting");
+    else if (weakFighting === 2) weak.push("Fighting");
+    if (weakFlying > 2) veryWeak.push("Flying");
+    else if (weakFlying === 2) weak.push("Flying");
+    if (weakFire > 2) veryWeak.push("Fire");
+    else if (weakFire === 2) weak.push("Fire");
+    if (weakGhost > 2) veryWeak.push("Ghost");
+    else if (weakGhost === 2) weak.push("Ghost");
+    if (weakGrass > 2) veryWeak.push("Grass");
+    else if (weakGrass === 2) weak.push("Grass");
+    if (weakGround > 2) veryWeak.push("Ground");
+    else if (weakGround === 2) weak.push("Ground");
+    if (weakIce > 2) veryWeak.push("Ice");
+    else if (weakIce === 2) weak.push("Ice");
+    if (weakNormal > 2) veryWeak.push("Normal");
+    else if (weakNormal === 2) weak.push("Normal");
+    if (weakPoison > 2) veryWeak.push("Poison");
+    else if (weakPoison === 2) weak.push("Poison");
+    if (weakPsychic > 2) veryWeak.push("Psychic");
+    else if (weakPsychic === 2) weak.push("Psychic");
+    if (weakRock > 2) veryWeak.push("Rock");
+    else if (weakRock === 2) weak.push("Rock");
+    if (weakSteel > 2) veryWeak.push("Steel");
+    else if (weakSteel === 2) weak.push("Steel");
+    if (weakWater > 2) veryWeak.push("Water");
+    else if (weakWater === 2) weak.push("Water");
+
     return (
       <div>
-        <li>
-          <img class="type" src={`./images/Bug.png`} alt={`Bug type icon`} /> :{" "}
-          {statMap.get("Bug")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Dragon.png`}
-            alt={`Dragon type icon`}
-          />{" "}
-          : {statMap.get("Dragon")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Electric.png`}
-            alt={`Electric type icon`}
-          />{" "}
-          : {statMap.get("Electric")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Fighting.png`}
-            alt={`Fighting type icon`}
-          />{" "}
-          : {statMap.get("Fighting")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Flying.png`}
-            alt={`Flying type icon`}
-          />{" "}
-          : {statMap.get("Flying")}
-        </li>
-        <li>
-          <img class="type" src={`./images/Fire.png`} alt={`Fire type icon`} />{" "}
-          : {statMap.get("Fire")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Ghost.png`}
-            alt={`Ghost type icon`}
-          />{" "}
-          : {statMap.get("Ghost")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Grass.png`}
-            alt={`Grass type icon`}
-          />{" "}
-          : {statMap.get("Grass")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Ground.png`}
-            alt={`Ground type icon`}
-          />{" "}
-          : {statMap.get("Ground")}
-        </li>
-        <li>
-          <img class="type" src={`./images/Ice.png`} alt={`Ice type icon`} /> :{" "}
-          {statMap.get("Ice")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Normal.png`}
-            alt={`Normal type icon`}
-          />{" "}
-          : {statMap.get("Normal")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Poison.png`}
-            alt={`Poison type icon`}
-          />{" "}
-          : {statMap.get("Poison")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Psychic.png`}
-            alt={`Psychic type icon`}
-          />{" "}
-          : {statMap.get("Psychic")}
-        </li>
-        <li>
-          <img class="type" src={`./images/Rock.png`} alt={`Rock type icon`} />{" "}
-          : {statMap.get("Rock")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Steel.png`}
-            alt={`Steel type icon`}
-          />{" "}
-          : {statMap.get("Steel")}
-        </li>
-        <li>
-          <img
-            class="type"
-            src={`./images/Water.png`}
-            alt={`Water type icon`}
-          />{" "}
-          : {statMap.get("Water")}
-        </li>
+        <div className="statContainer">
+          <h2 className="statWord">Type Breakdown:</h2>
+        </div>
+        <ul className="breakdown">
+          <li>
+            <img class="type" src={`./images/Bug.png`} alt={`Bug type icon`} />{" "}
+            : {statMap.get("Bug")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Dragon.png`}
+              alt={`Dragon type icon`}
+            />{" "}
+            : {statMap.get("Dragon")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Electric.png`}
+              alt={`Electric type icon`}
+            />{" "}
+            : {statMap.get("Electric")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Fighting.png`}
+              alt={`Fighting type icon`}
+            />{" "}
+            : {statMap.get("Fighting")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Flying.png`}
+              alt={`Flying type icon`}
+            />{" "}
+            : {statMap.get("Flying")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Fire.png`}
+              alt={`Fire type icon`}
+            />{" "}
+            : {statMap.get("Fire")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Ghost.png`}
+              alt={`Ghost type icon`}
+            />{" "}
+            : {statMap.get("Ghost")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Grass.png`}
+              alt={`Grass type icon`}
+            />{" "}
+            : {statMap.get("Grass")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Ground.png`}
+              alt={`Ground type icon`}
+            />{" "}
+            : {statMap.get("Ground")}
+          </li>
+          <li>
+            <img class="type" src={`./images/Ice.png`} alt={`Ice type icon`} />{" "}
+            : {statMap.get("Ice")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Normal.png`}
+              alt={`Normal type icon`}
+            />{" "}
+            : {statMap.get("Normal")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Poison.png`}
+              alt={`Poison type icon`}
+            />{" "}
+            : {statMap.get("Poison")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Psychic.png`}
+              alt={`Psychic type icon`}
+            />{" "}
+            : {statMap.get("Psychic")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Rock.png`}
+              alt={`Rock type icon`}
+            />{" "}
+            : {statMap.get("Rock")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Steel.png`}
+              alt={`Steel type icon`}
+            />{" "}
+            : {statMap.get("Steel")}
+          </li>
+          <li>
+            <img
+              class="type"
+              src={`./images/Water.png`}
+              alt={`Water type icon`}
+            />{" "}
+            : {statMap.get("Water")}
+          </li>
+        </ul>
+        <div className="weakWords">
+          <h2 className="weakWord">Weak to:</h2>
+          <h2 className="vWeakWord">Very weak to:</h2>
+        </div>
+        <div className="weakContainer">
+          <ul className="weak">
+            {weak.map((weakness) => (
+              <div>
+                <img
+                  class="type"
+                  src={`./images/${weakness}.png`}
+                  alt={`${weakness} type icon`}
+                />
+              </div>
+            ))}
+          </ul>
+          <ul className="vWeak">
+            {veryWeak.map((weakness) => (
+              <div>
+                <img
+                  class="type"
+                  src={`./images/${weakness}.png`}
+                  alt={`${weakness} type icon`}
+                />
+              </div>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   };
@@ -270,9 +384,11 @@ function Player(props) {
         </form>
       </nav>
       <br />
-      <ol>{renderTeams()}</ol>
+      <div>
+        <ol>{renderTeams()}</ol>
+      </div>
       <br />
-      <ul>{renderStats()}</ul>
+      <div>{renderStats()}</div>
     </div>
   );
 }
