@@ -133,6 +133,8 @@ function EditTrainer() {
                     <option value="22">Tourist Boy</option>
                   </select>
                 </div>
+                <div className="msg"> {msg ? `${msg}` : ""}</div>
+                {error ? <div className="danger">{error}</div> : ""}
                 <div className="form-group">
                   <input
                     type="submit"
@@ -152,8 +154,7 @@ function EditTrainer() {
                 alt="Pokemon gym badges"
               />
             </div>
-            <div className="msg"> {msg ? `${msg}` : ""}</div>
-            {error ? <div className="danger">{error}</div> : ""}
+
             <div className="links">
               <Link to="/trainer">
                 <button className="button4" type="button">
