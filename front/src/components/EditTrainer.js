@@ -155,17 +155,17 @@ function EditTrainer() {
             {error ? <div className="danger">{error}</div> : ""}
             <div className="links">
               <Link to="/trainer">
-                <button className="button" type="button">
+                <button className="button4" type="button">
                   Back to Trainer Card
                 </button>
               </Link>
               <Link to="/editprofile">
-                <button className="button" type="button">
+                <button className="button4" type="button">
                   Edit Account Info
                 </button>
               </Link>
               <Link to="/delete">
-                <button className="button" type="button">
+                <button className="button4" type="button">
                   Delete Account
                 </button>
               </Link>

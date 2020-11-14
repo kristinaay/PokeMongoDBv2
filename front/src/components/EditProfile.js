@@ -50,10 +50,10 @@ function EditProfile() {
       </nav>
       <div className="container-fluid d-flex justify-content-center">
         <div className="usercard3">
-          <div className="card-header">
+          <div className="card-header" id="card-header-editp">
             <h3>My Account</h3>
           </div>
-          <div className="card-body">
+          <div className="card-body" id="card-body-edit-prof">
             <form id="update" action="/update" method="post"></form>
             <form>
               <div className="form-group">
@@ -93,19 +93,21 @@ function EditProfile() {
                 </div>
               </div>
             </form>
-          </div>{" "}
-          <Link to="/trainer">
-            <button className="button" type="button">
-              Back to Trainer Card
+          </div>
+        </div>
+        <div className="links2">
+          <Link to="/edittrainer">
+            <button className="button5" type="button">
+              Edit Trainer Card
             </button>
           </Link>
           <Link to="/editprofile">
-            <button className="button" type="button">
+            <button className="button5" type="button">
               Edit Account Info
             </button>
           </Link>
           <Link to="/delete">
-            <button className="button" type="button">
+            <button className="button5" type="button">
               Delete Account
             </button>
           </Link>
