@@ -6,7 +6,7 @@ Made for: https://johnguerra.co/classes/webDevelopment_fall_2020/
 # Project Objective: 
 Develop a web app that allows users to create their own team of Pokemon and see its stats breakdown.
 # Screenshot:
-![screenshot](/front/public/images/ss1.png)
+![screenshot](/front/public/images/ss.png)
 ![screenshot](/front/public/images/ss2.png)
 # Instructions to build:
   Clone repository from Github\
