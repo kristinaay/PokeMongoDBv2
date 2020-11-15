@@ -6,3 +6,10 @@ ol {
   background-color: #e7e7e7;
   margin-bottom: 5px;
 }
+
+.searchtext {
+  font-family: "Goldman", cursive;
+  margin: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}

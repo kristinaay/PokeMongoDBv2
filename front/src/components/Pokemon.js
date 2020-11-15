@@ -133,7 +133,7 @@ function Pokemon(props) {
         </form>
       </nav>
       <div>
-        <label htmlFor="search">
+        <label className="searchtext" htmlFor="search">
           Search for a pokemon to add to your team:{" "}
           <input
             type="text"
@@ -141,7 +141,7 @@ function Pokemon(props) {
             onChange={(evt) => setPokemon(evt.target.value)}
           />
         </label>
-        <br />
+        <br /> <br />
         <ol>{renderPokemon()}</ol>
       </div>
       <br /> <br />
