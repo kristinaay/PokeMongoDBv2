@@ -1,6 +1,6 @@
 #deleteacc {
-  background: linear-gradient(to bottom, #44c767 5%, #b2d69f 100%);
-  background-color: #44c767;
+  background: linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+  background-color: #d0451b;
   border-radius: 8px;
   border: 1px solid #18ab29;
   display: inline-block;
@@ -14,8 +14,8 @@
   margin: 1px;
 }
 #deleteacc:hover {
-  background: linear-gradient(to bottom, #b2d69f 5%, #44c767 100%);
-  background-color: #b2d69f;
+  background: linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+  background-color: #bc3315;
   text-decoration: none;
 }
 #deleteacc:active {
@@ -26,4 +26,10 @@
 #card-body-delete {
   color: black;
   font-size: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#card-header-deletep {
+  background-color: #d0451b;
 }

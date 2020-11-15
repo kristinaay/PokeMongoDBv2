@@ -123,16 +123,6 @@ function Favorites(props) {
         </form>
       </nav>
       <ol>{renderFavorites()}</ol>
-      <br /> <br />
-      <footer>
-        Created by Alex Moeller, Ely Lam and Kristina Yin 2020{" "}
-        <img
-          src="./images/pokeball.png"
-          alt="Pokeball"
-          title="Pokeball"
-          width="20"
-        />
-      </footer>
     </div>
   );
 }
