@@ -17,19 +17,16 @@ ol {
 
 .weakWords {
   display: flex;
-  justify-content: center;
+  flex-flow: wrap;
+  justify-content: space-around;
+  columns: 2;
 }
 
 .weakWord,
 .vWeakWord {
   font-family: "Goldman", cursive;
-  width: 50%;
   text-align: center;
-}
-
-.weakContainer {
-  display: flex;
-  justify-content: center;
+  width: 300px;
 }
 
 .breakdown {
@@ -38,12 +35,16 @@ ol {
   font-family: "Goldman", cursive;
 }
 
+.weakContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .weak,
 .vWeak {
-  columns: 3;
   font-family: "Goldman", cursive;
-  text-align: center;
-  width: 50%;
+  width: 150px;
 }
 
 .type {
