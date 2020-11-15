@@ -122,6 +122,7 @@ function Favorites(props) {
           />
         </form>
       </nav>
+      <br />
       <ol>{renderFavorites()}</ol>
     </div>
   );
