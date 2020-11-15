@@ -110,40 +110,46 @@ function Player(props) {
       }
     }
 
-    if (statMap === undefined) return null;
-    let weakBug =
-      statMap.get("Fire") + statMap.get("Flying") + statMap.get("Rock");
-    let weakDragon = statMap.get("Ice") + statMap.get("Dragon");
-    let weakElectric = statMap.get("Ground");
-    let weakFighting = statMap.get("Flying") + statMap.get("Psychic");
-    let weakFlying =
-      statMap.get("Electric") + statMap.get("Ice") + statMap.get("Rock");
-    let weakFire =
-      statMap.get("Water") + statMap.get("Ground") + statMap.get("Rock");
-    let weakGhost = statMap.get("Ghost");
-    let weakGrass =
-      statMap.get("Fire") +
-      statMap.get("Flying") +
-      statMap.get("Poison") +
-      statMap.get("Bug");
-    let weakGround =
-      statMap.get("Water") + statMap.get("Grass") + statMap.get("Ice");
-    let weakIce =
-      statMap.get("Fire") +
-      statMap.get("Fighting") +
+        if (statMap === undefined) return null;
+    let weakBug = statMap.get("Grass") + statMap.get("Psychic");
+    let weakDragon = statMap.get("Dragon");
+    let weakElectric = statMap.get("Water") + statMap.get("Flying");
+    let weakFighting =
+      statMap.get("Normal") +
+      statMap.get("Ice") +
       statMap.get("Rock") +
       statMap.get("Steel");
-    let weakNormal = statMap.get("Fighting");
-    let weakPoison = statMap.get("Poison") + statMap.get("Psychic");
-    let weakPsychic = statMap.get("Bug") + statMap.get("Ghost");
-    let weakRock =
-      statMap.get("Water") +
+    let weakFlying =
+      statMap.get("Grass") + statMap.get("Fighting") + statMap.get("Bug");
+    let weakFire =
       statMap.get("Grass") +
-      statMap.get("Fighting") +
-      statMap.get("Ground");
-    let weakSteel =
-      statMap.get("Fire") + statMap.get("Fighting") + statMap.get("Ground");
-    let weakWater = statMap.get("Electric") + statMap.get("Grass");
+      statMap.get("Ice") +
+      statMap.get("Bug") +
+      statMap.get("Steel");
+    let weakGhost = statMap.get("Ghost") + statMap.get("Psychic");
+    let weakGrass =
+      statMap.get("Water") + statMap.get("Ground") + statMap.get("Rock");
+    let weakGround =
+      statMap.get("Fire") +
+      statMap.get("Electric") +
+      statMap.get("Poison") +
+      statMap.get("Rock") +
+      statMap.get("Steel");
+    let weakIce =
+      statMap.get("Grass") +
+      statMap.get("Ground") +
+      statMap.get("Flying") +
+      statMap.get("Dragon");
+    let weakPoison = statMap.get("Grass");
+    let weakPsychic = statMap.get("Fighting") + statMap.get("Poison");
+    let weakRock =
+      statMap.get("Fire") +
+      statMap.get("Ice") +
+      statMap.get("Flying") +
+      statMap.get("Bug");
+    let weakSteel = statMap.get("Ice") + statMap.get("Rock");
+    let weakWater =
+      statMap.get("Fire") + statMap.get("Ground") + statMap.get("Rock");
 
     let weak = [];
     let veryWeak = [];
@@ -168,8 +174,6 @@ function Player(props) {
     else if (weakGround === 2) weak.push("Ground");
     if (weakIce > 2) veryWeak.push("Ice");
     else if (weakIce === 2) weak.push("Ice");
-    if (weakNormal > 2) veryWeak.push("Normal");
-    else if (weakNormal === 2) weak.push("Normal");
     if (weakPoison > 2) veryWeak.push("Poison");
     else if (weakPoison === 2) weak.push("Poison");
     if (weakPsychic > 2) veryWeak.push("Psychic");
