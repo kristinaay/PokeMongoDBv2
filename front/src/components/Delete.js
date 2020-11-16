@@ -34,7 +34,7 @@ function Delete() {
             Favorites
           </button>
         </Link>
-        <Link to="/trainer">
+        <Link to="/trainerpage">
           <button className="myButton2" type="button">
             Trainer Page
           </button>
@@ -92,7 +92,7 @@ function Delete() {
           </div>
         </div>
         <div className="links2">
-          <Link to="/trainer">
+          <Link to="/trainerpage">
             <button className="button4" type="button">
               Trainer Card
             </button>

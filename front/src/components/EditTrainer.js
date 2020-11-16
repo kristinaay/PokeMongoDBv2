@@ -42,7 +42,7 @@ function EditTrainer() {
             Favorites
           </button>
         </Link>
-        <Link to="/trainer">
+        <Link to="/trainerpage">
           <button className="myButton2" type="button">
             Trainer Page
           </button>
@@ -156,7 +156,7 @@ function EditTrainer() {
             </div>
 
             <div className="links">
-              <Link to="/trainer">
+              <Link to="/trainerpage">
                 <button className="button4" type="button">
                   Back to Trainer Card
                 </button>

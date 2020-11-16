@@ -118,7 +118,7 @@ function Pokemon(props) {
             Favorites
           </button>
         </Link>
-        <Link to="/trainer">
+        <Link to="/trainerpage">
           <button className="myButton2" type="button">
             Trainer Page
           </button>

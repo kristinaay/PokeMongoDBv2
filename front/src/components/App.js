@@ -94,7 +94,7 @@ function App() {
             <Route path="/signup" component={SignUp} />
             <Route path="/signin" component={SignIn} />
             <Route
-              path="/trainer"
+              path="/trainerpage"
               render={(props) => (
                 <TrainerProfile
                   {...props}
