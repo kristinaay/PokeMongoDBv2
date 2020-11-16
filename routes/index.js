@@ -208,7 +208,7 @@ router.get("/pokemon1", async (req, res) => {
   res.json(pokemon); // get pokemon db
 });
 
-router.post("/signout", (req, res, next) => {
+router.post("/signout", (req, res) => {
   req.session.destroy();
   res.redirect("/?msg=You have been signed out successfully.");
 });
