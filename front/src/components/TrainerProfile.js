@@ -23,7 +23,7 @@ function TrainerProfile(props) {
   const train = props.trainer;
   let count = Object.keys(train).length;
   if (count === 0) {
-    return null;
+    console.log("empty");
   }
   trainer = props.trainer.filter((t) => t.name.startsWith(user));
   if (trainer[0] !== undefined) {
