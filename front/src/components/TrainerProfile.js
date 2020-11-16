@@ -37,7 +37,10 @@ function TrainerProfile(props) {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        role="navigation"
+      >
         <a className="navbar-brand" href="/">
           <img
             src="./images/pika.png"
@@ -76,11 +79,11 @@ function TrainerProfile(props) {
           />
         </form>
       </nav>
-      <div className="TrainerCard">
+      <div className="TrainerCard" role="main">
         <div className="container-fluid d-flex justify-content-center">
           <div className="trainer">
             <div className="card-header" id="card-header-trainer">
-              <h3 className="cardname">Trainer's Card</h3>
+              <h1 className="cardname">Trainer's Card</h1>
             </div>
             <div className="card-body-trainer">
               <div className="card-body-inner">
@@ -115,7 +118,7 @@ function TrainerProfile(props) {
               />
             </div>
             <div className="card-footer" id="trainer-footer">
-              <p>Badges:</p>
+              <p id="badges-name">Badges:</p>
               <img
                 className="badges"
                 src="./images/badges.png"

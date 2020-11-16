@@ -83,7 +83,10 @@ function Favorites(props) {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        role="navigation"
+      >
         <a className="navbar-brand" href="/">
           <img
             src="./images/pika.png"
@@ -123,7 +126,11 @@ function Favorites(props) {
         </form>
       </nav>
       <br />
-      <ol>{renderFavorites()}</ol>
+      <div role="main">
+        <h1 className="header-center"> Your Favorites </h1>
+        <br />
+        <ol>{renderFavorites()}</ol>
+      </div>
     </div>
   );
 }

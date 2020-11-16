@@ -381,7 +381,7 @@ function Player(props) {
       </nav>
       <br />
       <div clasName="contain" role="main">
-        <h1 className="header-player"> Your Team </h1>
+        <h1 className="header-center"> Your Team </h1>
         <div>
           <div>{renderTeams()}</div>
         </div>
