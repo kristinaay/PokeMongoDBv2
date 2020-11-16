@@ -73,7 +73,7 @@ function Pokemon(props) {
             <input
               type="hidden"
               name="newPokemon"
-              id={`newPokemon${p._id}`}
+              id={`newFavPokemon${p._id}`}
               value={`${p._id}`}
             />
             <input
