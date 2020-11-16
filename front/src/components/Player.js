@@ -314,20 +314,24 @@ function Player(props) {
         <div className="weakContainer">
           <ul className="weak">
             {weak.map((weakness) => (
-              <img
-                class="type"
-                src={`./images/${weakness}.png`}
-                alt={`${weakness} type icon`}
-              />
+              <li>
+                <img
+                  class="type"
+                  src={`./images/${weakness}.png`}
+                  alt={`${weakness} type icon`}
+                />
+              </li>
             ))}
           </ul>
           <ul className="vWeak">
             {veryWeak.map((weakness) => (
-              <img
-                class="type"
-                src={`./images/${weakness}.png`}
-                alt={`${weakness} type icon`}
-              />
+              <li>
+                <img
+                  class="type"
+                  src={`./images/${weakness}.png`}
+                  alt={`${weakness} type icon`}
+                />
+              </li>
             ))}
           </ul>
         </div>
