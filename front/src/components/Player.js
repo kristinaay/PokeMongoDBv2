@@ -103,7 +103,7 @@ function Player(props) {
       }
     }
 
-        if (statMap === undefined) return null;
+    if (statMap === undefined) return null;
     let weakBug = statMap.get("Grass") + statMap.get("Psychic");
     let weakDragon = statMap.get("Dragon");
     let weakElectric = statMap.get("Water") + statMap.get("Flying");
@@ -364,7 +364,7 @@ function Player(props) {
             Favorites
           </button>
         </Link>
-        <Link to="/trainer">
+        <Link to="/trainerpage">
           <button className="myButton2" type="button">
             Trainer Page
           </button>
