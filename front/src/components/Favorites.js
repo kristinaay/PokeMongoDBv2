@@ -63,7 +63,7 @@ function Favorites(props) {
           <input
             type="hidden"
             name="removeMon"
-            id={`newPokemon${p}`}
+            id={`newFavPokemon${p}`}
             value={`${p}`}
           />
           <input
