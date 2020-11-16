@@ -23,36 +23,38 @@ function Player(props) {
     return (
       <div>
         <div>
-          <li key={poke}>
-            <img src={`./images/${poke}.png`} alt={`(#${poke}) Sprite`} />
-            <br />
-            <br />
-          </li>
-          <li key={poke1}>
-            <img src={`./images/${poke1}.png`} alt={`(#${poke1}) Sprite`} />
-            <br />
-            <br />
-          </li>
-          <li key={poke2}>
-            <img src={`./images/${poke2}.png`} alt={`(#${poke2}) Sprite`} />
-            <br />
-            <br />
-          </li>
-          <li key={poke3}>
-            <img src={`./images/${poke3}.png`} alt={`(#${poke3}) Sprite`} />
-            <br />
-            <br />
-          </li>
-          <li key={poke4}>
-            <img src={`./images/${poke4}.png`} alt={`(#${poke4}) Sprite`} />
-            <br />
-            <br />
-          </li>
-          <li key={poke5}>
-            <img src={`./images/${poke5}.png`} alt={`(#${poke5}) Sprite`} />
-            <br />
-            <br />
-          </li>
+          <ol>
+            <li key={poke}>
+              <img src={`./images/${poke}.png`} alt={`(#${poke}) Sprite`} />
+              <br />
+              <br />
+            </li>
+            <li key={poke1}>
+              <img src={`./images/${poke1}.png`} alt={`(#${poke1}) Sprite`} />
+              <br />
+              <br />
+            </li>
+            <li key={poke2}>
+              <img src={`./images/${poke2}.png`} alt={`(#${poke2}) Sprite`} />
+              <br />
+              <br />
+            </li>
+            <li key={poke3}>
+              <img src={`./images/${poke3}.png`} alt={`(#${poke3}) Sprite`} />
+              <br />
+              <br />
+            </li>
+            <li key={poke4}>
+              <img src={`./images/${poke4}.png`} alt={`(#${poke4}) Sprite`} />
+              <br />
+              <br />
+            </li>
+            <li key={poke5}>
+              <img src={`./images/${poke5}.png`} alt={`(#${poke5}) Sprite`} />
+              <br />
+              <br />
+            </li>
+          </ol>
         </div>
       </div>
     );
@@ -312,24 +314,20 @@ function Player(props) {
         <div className="weakContainer">
           <ul className="weak">
             {weak.map((weakness) => (
-              <div>
-                <img
-                  class="type"
-                  src={`./images/${weakness}.png`}
-                  alt={`${weakness} type icon`}
-                />
-              </div>
+              <img
+                class="type"
+                src={`./images/${weakness}.png`}
+                alt={`${weakness} type icon`}
+              />
             ))}
           </ul>
           <ul className="vWeak">
             {veryWeak.map((weakness) => (
-              <div>
-                <img
-                  class="type"
-                  src={`./images/${weakness}.png`}
-                  alt={`${weakness} type icon`}
-                />
-              </div>
+              <img
+                class="type"
+                src={`./images/${weakness}.png`}
+                alt={`${weakness} type icon`}
+              />
             ))}
           </ul>
         </div>
@@ -339,7 +337,10 @@ function Player(props) {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        role="navigation"
+      >
         <a className="navbar-brand" href="/">
           <img
             src="./images/pika.png"
@@ -379,11 +380,15 @@ function Player(props) {
         </form>
       </nav>
       <br />
-      <div>
-        <ol>{renderTeams()}</ol>
+      <div clasName="contain" role="main">
+        <h1 className="header-player"> Your Team </h1>
+        <div>
+          <div>{renderTeams()}</div>
+        </div>
+        <br />
+        {renderStats()}
+        <br /> <br />
       </div>
-      <br />
-      <div>{renderStats()}</div> <br /> <br />
     </div>
   );
 }

@@ -4,6 +4,12 @@ ol {
   text-align: center;
 }
 
+.header-player {
+  font-size: 30px;
+  font-family: "Goldman", cursive;
+  text-align: center;
+}
+
 .statContainer {
   clear: both;
   display: flex;
