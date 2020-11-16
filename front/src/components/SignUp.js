@@ -8,7 +8,10 @@ function SignUp() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        role="navigation"
+      >
         <a className="navbar-brand" href="/">
           <img
             src="./images/pika.png"
@@ -30,7 +33,7 @@ function SignUp() {
         </Link>
       </nav>
       <div className="containeroak">
-        <div className="row">
+        <div className="row" role="complementary">
           <img
             className="oak"
             src="./images/oak.png"
@@ -38,10 +41,10 @@ function SignUp() {
           />
         </div>
         <div className="row">
-          <div className="container-fluid d-flex">
-            <div className="signcard2">
+          <div className="container-fluid d-flex" role="main">
+            <div className="signcard2" role="form">
               <div className="card-header">
-                <h3>Become a trainer today!</h3>
+                <h1 className="header1">Become a trainer today!</h1>
               </div>
               <div className="card-body">
                 <form action="/signupp" method="POST">

@@ -12,6 +12,10 @@ body {
   width: 80%;
 }
 
+.header1 {
+  font-size: 30px;
+}
+
 .row {
   padding: 2%;
 }
