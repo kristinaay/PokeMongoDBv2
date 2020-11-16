@@ -19,6 +19,7 @@ body {
 .card-header {
   background-color: #44c767;
   font-family: "Goldman", cursive;
+  font-size: 30px;
 }
 
 .card-body {
