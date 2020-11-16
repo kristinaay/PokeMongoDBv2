@@ -9,7 +9,10 @@ function EditProfile() {
   const msg = urlParams.get("msg");
   return (
     <div className="user">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        role="navigation"
+      >
         <a className="navbar-brand" href="/">
           <img
             src="./images/pika.png"
@@ -48,10 +51,13 @@ function EditProfile() {
           />
         </form>
       </nav>
-      <div className="container-fluid d-flex justify-content-center">
+      <div
+        className="container-fluid d-flex justify-content-center"
+        role="main"
+      >
         <div className="usercard3">
           <div className="card-header" id="card-header-editp">
-            <h3>My Account</h3>
+            <h1 className="header1">My Account</h1>
           </div>
           <div className="card-body" id="card-body-edit-prof">
             <form id="update" action="/update" method="post"></form>

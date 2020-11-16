@@ -93,7 +93,10 @@ function Pokemon(props) {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        role="navigation"
+      >
         <a className="navbar-brand" href="/">
           <img
             src="./images/pika.png"
@@ -132,7 +135,7 @@ function Pokemon(props) {
           />
         </form>
       </nav>
-      <div>
+      <div role="main">
         <label className="searchtext" htmlFor="search">
           Search for a pokemon to add to your team:{" "}
           <input
@@ -141,6 +144,8 @@ function Pokemon(props) {
             onChange={(evt) => setPokemon(evt.target.value)}
           />
         </label>
+        <br />
+        <h1 className="header-center"> All Pokemon </h1>
         <br /> <br />
         <ol>{renderPokemon()}</ol>
       </div>
