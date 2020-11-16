@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import "./styles/Player.css";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 function Player(props) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -9,13 +8,7 @@ function Player(props) {
   if (username !== null && username !== undefined) {
     localStorage.setItem("username", username);
   }
-  const [user, setUser] = useState("");
-  useEffect(() => {
-    const storedUser = localStorage.getItem("username");
-    if (storedUser) {
-      setUser(storedUser);
-    }
-  }, []);
+
   const renderTeams = () => {
     const teams = props.player.filter((t) => t.name.startsWith(props.user));
     console.log("teams");
