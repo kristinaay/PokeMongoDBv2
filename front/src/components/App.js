@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/App.css";
-import { Link } from "react-router-dom";
 import Pokemon from "./Pokemon.js";
 import Player from "./Player.js";
-import User from "./User.js";
 import Favorites from "./Favorites.js";
 import SignUp from "./SignUp.js";
 import SignIn from "./SignIn.js";
@@ -16,16 +14,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
-  const [showPokemon, setShowPokemon] = useState(false);
   const [player, setPlayer] = useState([]);
   const [trainer, setTrainer] = useState([]);
-  const [showTeam, setShowTeam] = useState(false);
   const [user, setUser] = useState("");
-  const [showUserEnter, setShowUserEnter] = useState(true);
   const [favorites, setFavorites] = useState([]);
-  const [showFavorites, setShowFavorites] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false);
-  const [showSignIn, setShowSignIn] = useState(false);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("username");
@@ -159,7 +151,3 @@ function App() {
 // Image from https://www.freeiconspng.com/img/45343
 
 export default App;
-
-//     <Route path="/delete" component={Delete} />
-//      <Route path="/editprofile" component={EditProfile} />
-//      <Route path="/edittrainer" component={EditTrainer} />
