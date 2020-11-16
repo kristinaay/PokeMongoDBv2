@@ -30,7 +30,7 @@ function App() {
     const getPlayer = async () => {
       console.log("getting player");
       try {
-        const _player = await fetch("/player").then((res) => res.json());
+        const _player = await fetch("/player1").then((res) => res.json());
         setPlayer(_player);
       } catch (err) {
         console.log("error ", err);
@@ -43,7 +43,7 @@ function App() {
     const getPokemon = async () => {
       console.log("getting Pokemon");
       try {
-        const _pokemon = await fetch("/pokemon").then((res) => res.json());
+        const _pokemon = await fetch("/pokemon1").then((res) => res.json());
         let count = Object.keys(_pokemon).length;
         if (count === 0) {
           const _newDatabase = await fetch("/start").then((res) => res.json());
@@ -75,7 +75,7 @@ function App() {
     const getFavorites = async () => {
       console.log("getting favorites");
       try {
-        const _favorites = await fetch("/favorites").then((res) => res.json());
+        const _favorites = await fetch("/favorites1").then((res) => res.json());
         setFavorites(_favorites);
       } catch (err) {
         console.log("error ", err);

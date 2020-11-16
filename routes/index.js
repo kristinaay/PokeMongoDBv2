@@ -193,7 +193,7 @@ router.post("/edittrainerinfo", async (req, res, next) => {
   }
 });
 
-router.get("/player", async (req, res) => {
+router.get("/player1", async (req, res) => {
   const player = await myDB.getPlayer("alex");
   res.json(player); // get player db
 });
@@ -203,7 +203,7 @@ router.get("/trainers", async (req, res) => {
   res.json(trainer); // get trainer db
 });
 
-router.get("/pokemon", async (req, res) => {
+router.get("/pokemon1", async (req, res) => {
   const pokemon = await myDB.getPokemon();
   res.json(pokemon); // get pokemon db
 });
@@ -276,7 +276,7 @@ router.post("/deleteUser", async (req, res) => {
   res.redirect("/"); // redirect to home page
 });
 
-router.get("/favorites", async (req, res) => {
+router.get("/favorites1", async (req, res) => {
   const favs = await myDB.getFavorites();
   res.json(favs); // redirect to home page
 });
