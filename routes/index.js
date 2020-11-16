@@ -75,7 +75,7 @@ router.post(
     failureRedirect: "/signin?error=Invalid username or password.",
   }),
   function (req, res) {
-    res.redirect("/player?username=" + req.user.username);
+    return res.redirect("/player?username=" + req.user.username);
   }
 );
 //);
@@ -208,7 +208,7 @@ router.get("/pokemon", async (req, res) => {
   res.json(pokemon); // get pokemon db
 });
 
-router.post("/signout", (req, res, next) => {
+router.post("/signout", (req, res) => {
   req.session.destroy();
   res.redirect("/?msg=You have been signed out successfully.");
 });
