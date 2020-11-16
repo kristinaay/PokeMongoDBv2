@@ -13,7 +13,10 @@ function Home() {
   return (
     <div>
       <div className="homefull">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-end">
+        <nav
+          className="navbar navbar-expand-lg navbar-light bg-light justify-content-end"
+          role="navigation"
+        >
           <a className="navbar-brand" href="/">
             <img
               src="./images/pika.png"
@@ -38,8 +41,8 @@ function Home() {
         </nav>
         <div className="msg1"> {msg ? `${msg}` : ""}</div>
         <br />
-        <div className="intro">
-          <h3 className="buildheader">Build your best team!</h3>
+        <div className="intro" tabindex="0" role="main">
+          <h1 className="buildheader">Build your best team!</h1>
           <p>
             Welcome to PokeMongoDB! <br /> To get started, create an account and
             then sign in. <br /> <br />
