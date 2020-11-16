@@ -43,9 +43,7 @@ function Pokemon(props) {
           Type: {p.Type_1} <br />
           Type II: {p.Type_2} <br />
           <form action="/updateTeam" method="post">
-            <label htmlFor="position">
-              Swap with: <br />
-            </label>
+            <label for={`position${p._id}`}>Swap with: <br /></label>
             <select name="position" id={`position${p._id}`}>
               <option value="1">{poke}</option>
               <option value="2">{poke1}</option>
