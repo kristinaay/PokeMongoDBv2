@@ -12,6 +12,11 @@ body {
   width: 80%;
 }
 
+.header1 {
+  font-size: 30px;
+  font-family: "Goldman", cursive;
+}
+
 .row {
   padding: 2%;
 }

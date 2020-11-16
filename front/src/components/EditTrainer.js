@@ -17,7 +17,10 @@ function EditTrainer() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        role="navigation"
+      >
         <a className="navbar-brand" href="/">
           <img
             src="./images/pika.png"
@@ -56,11 +59,11 @@ function EditTrainer() {
           />
         </form>
       </nav>
-      <div className="EditCard">
+      <div className="EditCard" role="main">
         <div className="container-fluid d-flex justify-content-center">
           <div className="edit">
             <div className="card-header" id="card-header-edit">
-              <h3 className="editcardname">Edit Your Trainer Information</h3>
+              <h1 className="editcardname">Edit Your Trainer Information</h1>
             </div>
             <form action="/edittrainerinfo" method="POST">
               <div className="card-body-edit">
@@ -109,7 +112,7 @@ function EditTrainer() {
                   </div>
                 </div>
                 <div className="third">
-                  <label for="cars">Choose your trainer: </label> <br />
+                  <label for="trainers">Choose your trainer: </label> <br />
                   <select id="trainers" name="trainer">
                     <option value="0">Cute Blonde Girl</option>
                     <option value="1">Karate Girl</option>

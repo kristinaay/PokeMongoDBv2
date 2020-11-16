@@ -9,7 +9,10 @@ function SignIn() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        role="navigation"
+      >
         <a className="navbar-brand" href="/">
           <img
             src="./images/pika.png"
@@ -31,7 +34,7 @@ function SignIn() {
         </Link>
       </nav>
       <div className="containeroak">
-        <div className="row">
+        <div className="row" role="complementary">
           <img
             className="oak"
             src="./images/oak.png"
@@ -39,15 +42,18 @@ function SignIn() {
           />
         </div>
         <div className="row">
-          <div className="container-fluid d-flex justify-content-center">
-            <div className="signcard">
+          <div
+            className="container-fluid d-flex justify-content-center"
+            role="main"
+          >
+            <div className="signcard" role="form">
               <div className="card-header">
-                <h3>Sign In</h3>
+                <h1>Sign In</h1>
               </div>
               <div className="card-body">
                 <form action="/signinn" method="POST">
                   <div className="form-group">
-                    <label for="inputUserName">Username</label>
+                    <label for="username">Username</label>
                     <input
                       type="text"
                       id="username"
@@ -57,7 +63,7 @@ function SignIn() {
                     />
                   </div>
                   <div className="form group">
-                    <label for="inputPassword">Password</label>
+                    <label for="password">Password</label>
                     <input
                       type="password"
                       id="password"
