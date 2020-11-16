@@ -63,7 +63,7 @@ function Pokemon(props) {
             <input
               type="hidden"
               name="user"
-              id="user"
+              id={`userNewPokemon${p._id}`}
               value={`${props.user}`}
             />
             <br />
@@ -79,7 +79,7 @@ function Pokemon(props) {
             <input
               type="hidden"
               name="user"
-              id="user"
+              id={`userFavPokemon${p._id}`}
               value={`${props.user}`}
             />
             <button type="submit">Add to favorites</button>
