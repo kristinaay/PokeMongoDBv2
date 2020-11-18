@@ -32,14 +32,13 @@ body {
 }
 
 a {
-  font-family: "Roboto", sans-serif;
   color: brown;
 }
 
 .button6 {
   margin-top: 10px;
-  background: linear-gradient(to bottom, #44c767 5%, #b2d69f 100%);
-  background-color: #44c767;
+  background: linear-gradient(to bottom, #1b4f29 5%, #2f8b48 100%);
+  background-color: #1b4f29;
   border-radius: 8px;
   border: 1px solid #18ab29;
   display: inline-block;
@@ -53,8 +52,8 @@ a {
   margin: 1px;
 }
 .button6:hover {
-  background: linear-gradient(to bottom, #b2d69f 5%, #44c767 100%);
-  background-color: #b2d69f;
+  background: linear-gradient(to bottom, #2f8b48 5%, #1b4f29 100%);
+  background-color: #2f8b48;
   text-decoration: none;
 }
 .button6:active {

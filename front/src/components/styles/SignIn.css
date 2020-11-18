@@ -17,13 +17,15 @@ body {
 }
 
 .card-header {
-  background-color: #44c767;
+  background-color: #2f8b48;
   font-family: "Goldman", cursive;
   font-size: 30px;
 }
 
 .card-body {
   color: black;
+  background-color: whitesmoke;
+  font-family: Arial;
 }
 
 .card-footer {

@@ -59,8 +59,8 @@ ol {
 }
 
 .myButton2 {
-  background: linear-gradient(to bottom, #007dc1 5%, #6e9fc2 100%);
-  background-color: #007dc1;
+  background: linear-gradient(to bottom, #004b73 5%, #007dc1 100%);
+  background-color: #004b73;
   border-radius: 8px;
   border: 1px solid #124d77;
   display: inline-block;
@@ -76,8 +76,8 @@ ol {
   margin-right: auto;
 }
 .myButton2:hover {
-  background: linear-gradient(to bottom, #6e9fc2 5%, #007dc1 100%);
-  background-color: #6e9fc2;
+  background: linear-gradient(to bottom, #007dc1 5%, #004b73 100%);
+  background-color: #007dc1;
 }
 .myButton2:active {
   position: relative;
