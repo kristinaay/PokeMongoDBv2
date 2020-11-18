@@ -36,7 +36,7 @@ function Favorites(props) {
         />{" "}
         <br />
         <form action="/updateTeam" method="post">
-          <label htmlFor="position">
+          <label for={`position${p}`}>
             Swap with: <br />
           </label>
           <select name="position" id={`position${p}`}>
@@ -53,7 +53,12 @@ function Favorites(props) {
             id={`newPokemon${p}`}
             value={`${p}`}
           />
-          <input type="hidden" name="user" id="user" value={`${props.user}`} />
+          <input
+            type="hidden"
+            name="user"
+            id={`userAddMon${p}`}
+            value={`${props.user}`}
+          />
           <br />
           <button className="subButton" type="submit">
             Add to team!
@@ -63,13 +68,13 @@ function Favorites(props) {
           <input
             type="hidden"
             name="removeMon"
-            id={`newPokemon${p}`}
+            id={`newFavPokemon${p}`}
             value={`${p}`}
           />
           <input
             type="hidden"
             name="player"
-            id="user"
+            id={`userRemoveFav${p}`}
             value={`${props.user}`}
           />
           <button className="subButton" type="submit">
