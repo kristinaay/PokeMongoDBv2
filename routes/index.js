@@ -184,7 +184,13 @@ router.post("/edittrainerinfo", async (req, res, next) => {
           "/edittrainer?msg=Trainer information updated successfully."
         );
       } else {
-        myDB.createTrainer(info.username, info.age, info.gender, info.region);
+        myDB.createTrainer(
+          info.username,
+          info.age,
+          info.gender,
+          info.region,
+          info.trainer
+        );
         res.redirect(
           "/edittrainer?msg=Trainer information updated successfully!"
         );
