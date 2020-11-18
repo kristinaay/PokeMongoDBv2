@@ -19,7 +19,7 @@ body {
 
 #card-header-edit {
   color: white;
-  background-color: #007dc1;
+  background-color: #0070ad;
   padding-left: 20px;
 }
 
@@ -49,12 +49,16 @@ body {
   margin-left: auto;
 }
 
+#badges-text {
+  font-family: "Goldman", cursive;
+}
+
 #trainer-footer {
   display: inline-flex;
   width: 600px;
   font-size: 20px;
   font-family: "Goldman", cursive;
-  color: #3c240f;
+  background-color: #0070ad;
 }
 
 .badges {

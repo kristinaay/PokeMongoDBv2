@@ -150,7 +150,7 @@ function EditTrainer() {
               </div>
             </form>
             <div className="card-footer" id="trainer-footer">
-              <p>Badges:</p>
+              <p id="badges-text">Badges:</p>
               <img
                 className="badges"
                 src="./images/badges.png"
