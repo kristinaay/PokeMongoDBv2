@@ -242,7 +242,7 @@ router.post("/deletee", async (req, res, next) => {
       users.deleteOne({
         username: info.username,
       });
-      res.redirect("/delete?msg=Account was successfully deleted.");
+      res.redirect("/?msg=Account was successfully deleted.");
     }
   });
 });
